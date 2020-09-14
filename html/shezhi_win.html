@@ -1,0 +1,64 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <style>
+        body {}
+
+        #aui-header {
+            padding-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="aui-navBar aui-navBar-fixed" style="background: #F683A2" id="aui-header">
+								<a  onclick="closeWin()" class="aui-navBar-item"  >
+							<i class="icon icon-back"></i>
+								</a>
+								<div class="aui-center">
+										<span class="aui-center-title"   id="title" style="color: #fff;" >账号设置</span>
+								</div>
+
+			<!-- 直接清除					<a  onclick="clearR()" class="aui-navBar-item" style="color: #725f5f;"  >  -->
+									<a class="aui-navBar-item" style="color: #fff;"  >
+								
+								</a>
+
+						</header>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+  apiready = function(){
+
+    api.parseTapmode();
+    var header = $api.byId('aui-header');
+    $api.fixStatusBar(header);
+    var headerPos = $api.offset(header);
+    var body_h = $api.offset($api.dom('body')).h;
+    api.openFrame({
+        name: 'shezhi_frm',
+        url: 'shezhi_frm.html',
+        bounces: true,
+        rect: {
+            x: 0,
+            y: headerPos.h,
+            w: 'auto',
+            h: 'auto'
+        },
+
+        pageParam:{}
+    })
+
+
+  }
+
+
+  function closeWin(){
+      api.closeWin({
+      });
+  }
+</script>
+</html>

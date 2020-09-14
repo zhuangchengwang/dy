@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>title</title>
+      <link rel="stylesheet" type="text/css" href="../css/ti/api.css"/>
+	   <link rel="stylesheet" type="text/css" href="./css/ti/style.css"/>
+	   	 <link href="../css/wode.css" rel="stylesheet" type="text/css"/>
+    <style type="text/css">
+    
+      
+        .flex-con{
+          overflow: auto
+        }
+		#btn2{
+			 background: #F683A2;
+			box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
+			border-radius: 0.6rem !important;
+			text-align: center;
+			color: #fff !important;
+			height: 2.5rem;
+			width: 100%;
+			border: none !important;
+			font-size: 0.8rem;
+			margin-top:5px;
+			
+		}
+		
+		#shuru{
+		
+			-webkit-box-flex: 1;
+			flex: 1;
+			min-width: 0;
+			position: relative;
+			text-align: right;
+			padding-right: 1rem;
+			color: #999999;
+			font-size: 0.85rem;
+			
+		}
+    </style>
+  </head>
+<body style="background:#fff;">
+<div id="wrap" class="flex-wrap flex-vertical" >
+  
+  <!-- <header class="aui-navBar aui-navBar-fixed" style="background:#F683A2;;margin-top:10px;"> -->
+                <!-- <a href="javascript:;" class="aui-navBar-item" onClick="closeWin()"> -->
+                    <!-- <i class="icon icon-return" style="background-image:url('../image/app/back-b.png')"></i> -->
+                <!-- </a> -->
+                <!-- <div class="aui-center"> -->
+                    <!-- <span class="aui-center-title"></span> -->
+                <!-- </div> -->
+                <!-- <a href="javascript:;" class="aui-navBar-item"> -->
+                    <!-- <!-- <i class="icon icon-set"></i> --> 
+                    
+                <!-- </a> -->
+            <!-- </header>   -->
+     
+     
+                <div class="aui-tour-content" style="background:#F683A2;border-radius: 0 0 0%0%;height:150px;"></div>
+                <div class="aui-tour-box" >
+                    <div class="aui-tour-box-item">
+                        <div style="text-align: center;height: 200px">
+                          
+                                    <img src="../image/titi.png" alt="" style="margin-top:30px;width:50px;height:50px;">
+                             <div style="color:#fff;" ><em id="cheng">总业绩:0.00 元</em>&nbsp;<em id="yu">余额：0.00元</em></div> 
+                            <div  style="color:#fff;height:10px;"> &nbsp;</div>
+					
+							<ul style="float:left;width:100%;height:40px;">
+								<li style="float:left;width:33.33%;color:#fff;">
+									<span>一级推广</span>
+									<div id="tuan1"> 1</div>
+								</li>
+								<li style="float:left;width:33.333%;color:#fff;">
+									<span>二级推广</span>
+									<div id="tuan2">0</div>
+								 </li>
+								<li style="float:left;width:33.33%;color:#fff;">
+									<span>三级推广 </span>
+									<div id="tuan3">1 </div>
+								</li>
+							</ul>  
+
+							<div>
+									<span onClick="openWin('shouyi_win')"   style="background:#fff;color:#F683A2;border-radius:10px 10px;width:90px;height:23px;">收益明细</span>
+									
+									<span onClick="openWin('tijilu_win')" style="background:#fff;color:#F683A2;border-radius:10px 10px;width:90px;height:23px;">提现记录</span>
+							</div>
+                        </div>      
+					 <!-- <div style="width:100%;height:10px;background:#E8E8EE;"></div> -->
+                        <div class="aui-tour-layout" style="">
+                            <div class="aui-tour-news">
+							<a href="javascript:;" class="aui-flex b-line">
+                                    <div class="aui-flex-box-head">提现方式</div>
+                                    <div id="shuru">
+										支付宝
+									</div>
+                                </a>
+							
+								 <a href="javascript:;" class="aui-flex b-line" >
+                                    <div class="aui-flex-box-head">提现手续费</div> 
+                                    <div  id="shuru">
+										 <em id="xxdengji">10%</em>
+									 </div> 
+                                </a> 
+                                <a href="javascript:;" class="aui-flex b-line" >
+                                    <div class="aui-flex-box-head">收款人姓名</div>
+                                    <div  id="shuru">
+                                        <input id="uname" type="text"   placeholder="请输入收款人姓名" class="myui-from-list-item-input" dir="rtl">
+                                    </div>
+                                </a>
+								
+								<a href="javascript:;" class="aui-flex b-line" >
+                                    <div class="aui-flex-box-head">收款人账号</div>
+                                    <div  id="shuru">
+                                      <input id="zhifubao" type="text"   placeholder="请输入收款人账号" class="myui-from-list-item-input"  dir="rtl">
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="aui-flex b-line" >
+                                    <div class="aui-flex-box-head">提现金额</div>
+                                    <div  id="shuru">
+									<input id="price" type="text"  dir="rtl"  placeholder="请输入提现金额" class="myui-from-list-item-input">
+                                    </div>
+                                </a>
+                                <!-- <a href="javascript:;" class="aui-flex b-line"> -->
+                                    <!-- <div class="aui-flex-box-head">安全码</div> -->
+                                    <!-- <div  id="shuru"> -->
+									<!-- <input id="password"  dir="rtl" type="password" placeholder="请输入安全码" class="myui-from-list-item-input"> -->
+                                    <!-- </div> -->
+                                <!-- </a> -->
+							
+                            </div>
+
+        <button id="btn2" type="button" name="button" class="myui-from-list-item-button" onclick="toReg()" >提交申请</button>
+
+                        </div>
+						
+                    </div>
+					  
+                </div>
+				   
+</div>
+</body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript">
+      var api_url = localStorage.getItem('api_url');
+      apiready = function() {
+
+      
+		api.setStatusBarStyle({
+            style: 'dark',
+            color: '#F683A2'
+        });
+		api.ajax({
+				url: api_url+'/App/Index/fenge.html',
+				method: 'get',
+				data: {
+					values: {
+						uid:localStorage.getItem('user_id'),
+					}
+				}
+			},function(ret, err){
+				if (ret) {
+					var cheng = $api.byId('cheng');
+					if(ret.cheng){
+					cheng.innerHTML ='总业绩:'+ret.cheng+'元';
+					}else{
+					cheng.innerHTML ='总业绩:0.00元';
+					}
+					
+					var money = $api.byId('yu');
+					if(ret.money){
+					money.innerHTML = '余额：'+ret.money + '元';
+					}else{
+					money.innerHTML ='余额：0.00元';
+					}
+					 localStorage.setItem('tuan2',ret.tuan2);
+					
+					
+					var tuan2 = $api.byId('tuan2');
+					if(ret.money){
+					tuan2.innerHTML =  ret.tuan2;
+					}else{
+					tuan2.innerHTML = 0;
+					}
+					
+				var status = localStorage.getItem('status');
+					var dengji = $api.byId('xxdengji');
+					if(status==2){
+					dengji.innerHTML = '一级代理';
+					}else if(status==4){
+					
+					dengji.innerHTML = '二级代理';
+					}else if(status==5){
+					dengji.innerHTML = '三级代理';
+					}else{
+					dengji.innerHTML = '普通用户';
+					}
+					
+				} else {
+				  api.hideProgress();
+				/*   alert('网络错误！');
+					  原弹窗提示*/
+					  api.toast({
+						  msg: '(ｷ｀ﾟДﾟ´)!!  网络错误 请检查！',
+						  duration: 5000
+					  });
+
+				  //alert( JSON.stringify( err ) );
+				  return;
+				}
+			});
+		
+      
+    };
+	
+	
+	function toReg(){
+	
+	var uname = $api.val($api.byId('uname'));
+      var zhifubao = $api.val($api.byId('zhifubao'));
+	  var price = $api.val($api.byId('price'));
+	
+		if(uname == ''){
+			api.alert({
+				title: '警告！',
+				msg: '请输入姓名',
+			});
+			return;
+		  }
+		if(zhifubao == ''){
+			api.alert({
+				title: '警告！',
+				msg: '请输入账号',
+			});
+			return;
+		  }
+		if(price== ''){
+			api.alert({
+				title: '警告！',
+				msg: '请输入金额',
+			});
+			return;
+		  }
+	
+		  api.showProgress({
+          title: '申请中...',
+          text: '请稍等...',
+          modal: false
+		});
+	 
+		api.ajax({
+          url: api_url+'/App/Index/sqtixian.html',
+          method: 'get',
+          data: {
+              values: {
+                  uname: uname,
+                  zhifubao:zhifubao,
+				  jine:price,
+				  uid: localStorage.getItem('user_id'),
+				  
+              }
+          }
+      },function(ret, err){
+      	//alert(ret)
+          if (ret) {
+             
+			 if (ret.code == 1) {
+				api.hideProgress();			
+				api.alert({
+					msg: ret.msg,  
+					duration: 5000
+				});
+				
+			 }else if(ret.code == 0){
+			 api.hideProgress();
+					api.alert({
+					msg: ret.msg,
+					duration: 5000
+				});
+			 }
+			 
+			 
+			 
+			 
+          } else {
+            api.hideProgress();
+            api.alert({
+                title: '糟糕~',
+                msg: '网络错误！',
+            });
+          }
+      });
+	}
+	
+	
+	
+	
+	function closeWin(){
+      api.closeWin({
+      });
+  }
+	
+	
+	function openWin(name){
+	  
+		api.openWin({
+			  name: ''+name+'',
+			  url: ''+name+'.html',
+			 
+		  });
+	}
+	
+  </script>
+  </html>

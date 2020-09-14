@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>收藏</title>
+      <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+  </head>
+   <style>
+       .aui-nav-list-box ul li a {
+    color: #8B8386;
+}
+.guanggao ul li a {   
+    color: #8B8386;
+}
+
+ .guanggao{
+	margin-top:10px;
+	
+}
+.guanggao ul{
+		display: -webkit-box;	display: -webkit-flex;	display: flex;
+	}
+
+.guanggao ul li {
+	float: left;
+    color: #000;
+    cursor: pointer;
+    line-height: 30px;
+	flex: 1;
+    text-align: center;
+    font-size: 14px;
+
+
+}
+
+
+.aui-nav-list-box ul .aui-current {
+    color: #282828;
+    border-bottom: solid 2px #282828;
+    font-weight: bold;
+}
+
+.aui-nav-list-box ul .aui-current a {
+    color: #282828;
+}
+.aui-nav-list-item {
+    display: none;
+}
+.slidebox{
+	height:200px;
+}
+.guanggao img {
+    border-radius: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0 auto;
+}
+
+
+
+.aui-nav-list-box ul li a {
+    color: #8B8386;
+}
+
+.aui-nav-list-box ul{
+	display: -webkit-box;	display: -webkit-flex;	display: flex;
+	}
+
+.aui-nav-list-box ul li {
+	float: left;
+    color: #000;
+    cursor: pointer;
+    line-height: 40px;
+	flex: 1;
+    text-align: center;
+    font-size: 18px;
+
+}
+
+.aui-nav-list-box ul .aui-current {
+    color: #282828;
+    border-bottom: solid 2px #282828;
+    font-weight: bold;
+}
+
+.aui-nav-list-box ul .aui-current a {
+    color: #282828;
+}
+.aui-nav-list-item {
+    display: none;
+}
+.slidebox{
+	height:200px;
+}
+
+
+.huabox{
+	width:100%;
+	float: left;
+	margin: 0 auto;
+}
+.huabox h5{
+	border-radius:0.5rem;
+	color:#EE9A00;
+    float: left;
+    line-height: 1.3rem;
+    margin: 0.4rem 0 0 0;
+	width: 15.5%;
+	font-size:14px;
+	background-color:#F5DEB3;
+	
+}
+.notice_active{
+    float: left;
+    width: 80%;
+    height: 2rem;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+	font-size:14px;
+	color:black;
+}
+.notice_active_ch{
+	list-style-type: none;
+    line-height: 2rem;
+    overflow: hidden;
+}
+body{
+
+		}
+		.list{
+		}
+		.list li{
+			box-sizing: border-box;
+			height:73px;
+			width:100%;
+			border-bottom:1px solid #f0f0f0;
+			padding-left:80px;
+		}
+		.left{
+			float:left;
+			width:80px;
+			height:100%;
+			margin-left:-80px;
+		}
+		.logo_frame{
+			width:46px;
+			height:46px;
+			margin-top:17px;
+			margin-left:17px;
+			overflow: hidden;
+		}
+		.logo_frame img{
+			width:100%;
+		}
+		.info{
+			float:left;
+			width:100%;
+
+		}
+		.list_title{
+			box-sizing: border-box;
+			padding-right:10px;
+			margin-top:8px;
+			width:95%;
+			overflow:hidden;
+			font-size:15px;
+			line-height:40px;
+			font-family: '黑体';
+			min-height:40px;
+
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space:nowrap;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		}
+		.list_date{
+			margin-top:0px;
+			font-size:14px;
+			color:#767676;
+		}
+		.empty{
+			width:100%;
+			height:30px;
+			line-height:20px;
+			font:14px;
+			text-align:center;
+			margin-top:10px;
+
+		}
+
+
+	/*新加空提示信息*/
+
+	.m-noRecord {
+    padding: .395rem 0 0;
+    text-align: center;
+}
+
+.m-noRecord .c-icon-noRecord {
+    background: url(../image/app/Browsehistory.png) no-repeat;
+    background-size: cover;
+		width: 5rem;
+    height: 4.6rem;
+    /* margin: .485rem auto 0; */
+    margin: 0 auto;
+	  margin-top: 50px;
+		opacity:0.4;    /*图片透明度*/
+		filter:alpha(opacity=40); /* 针对 IE8 以及更早的版本 */
+}
+.m-noRecord .c-info {
+    color: #cecfce;
+    line-height: 4rem;
+    padding: .25rem 0;
+    font-size: .8rem;
+}
+
+    </style>
+  <body>
+  <div class="aui-nav-list-box"  > 
+			<ul>
+				<li class="aui-current"> 
+					<a href="#">收藏演员</a>
+				</li>
+				<li>
+					<a href="#">收藏视频</a>
+				</li>
+
+			</ul>
+		</div> 
+  <div class="aui-nav-list-tab">
+		<div class="aui-nav-list-item" style="display:block">
+		<section class="aui-content aui-margin-5" id="videoyan">
+			  <input type="hidden" value="0" id="nextrow" />
+				  <div class="aui-row-padded" >
+					  <div  class="aui-col-xs-6"  v-for="v in it" @click="openWin('list2_win', {title:v.title})">
+						  <div class="aui-card-list aui-border-t aui-border-b aui-margin-b-5">  
+							  <div class="aui-card-list-content">
+								  <img :src="v.img">
+							  </div>
+							  <div class="aui-card-list-header">
+								  <div class="aui-ellipsis-2" >{{v.title}}</div>
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+				  <!-- <div class="aui-card-list-footer aui-text-center" style="clear:both" v-text="loader"></div> -->
+			  </section>
+		</div>
+		<div class="aui-nav-list-item" >
+				<section class="aui-content aui-margin-5" id="videolist">
+			  <input type="hidden" value="0" id="nextrow" />
+				  <div class="aui-row-padded" >
+					  <div  class="aui-col-xs-6"  v-for="v in it" @click="openPlayer(v.url,v.title,v.img)">
+						  <div class="aui-card-list aui-border-t aui-border-b aui-margin-b-5">
+							  <div class="aui-card-list-content">
+								  <img :src="v.img" style="">
+							  </div>
+							  <div class="aui-card-list-header">
+								  <div class="aui-ellipsis-2" >{{v.title}}</div>
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+				  <!-- <div class="aui-card-list-footer aui-text-center" style="clear:both" v-text="loader"></div> -->
+			  </section>
+		</div>
+		
+		
+		</div>
+  
+      
+  </body>
+  
+	<script type="text/javascript" src="../script/jquery-1.9.1.min.js"></script>
+ <script type="text/javascript">
+ $(function(){ 
+ $('.aui-nav-list-box ul li').click(function(){
+		 $(this).addClass('aui-current').siblings().removeClass('aui-current');
+		 $('.aui-nav-list-tab>div:eq('+$(this).index()+')').show().siblings().hide();
+	 }) 
+	
+ }); 
+ </script> 
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript" src="../script/vue.js"></script>
+  <script type="text/javascript" src="../script/common.js"></script>
+  
+  <script type="text/javascript">
+   var api_url = localStorage.getItem('api_url');
+      apiready = function(){
+          api.parseTapmode();
+			yan();
+			video();
+		 
+      }
+	   function video(){
+			var videolist = new Vue({
+              el: '#videolist',
+              data: {
+                  it: [],
+                  offset: 0,
+                  loader: '正在加载更多...'
+              },
+              mounted: function(){
+                  this.add(); //初始化
+                  loadMore(function(){videolist.add()}); //下拉加载
+              },
+              updated: function(){
+                  echo.init({offset: 500, throttle: 0}); //图片懒加载
+              },
+              methods: {
+                  add: function(){
+                   var nextrow=$("#nextrow").val(); 
+                       api.ajax({
+							  url: api_url+'/App/App/shou.html',
+							  method: 'get',
+							   data: {
+								values: {
+										uid: localStorage.getItem('user_id'),
+										nextrow: nextrow,
+										}
+								} 
+								  },function(ret, err){
+									  if (ret) {
+										//console.log(JSON.stringify(ret))
+										
+										if (ret.code == 1) {
+										videolist.offset += nextrow;
+										videolist.it = videolist.it.concat(ret.msg);
+										$("#nextrow").val(parseInt(nextrow)+10);
+											
+									}else if (ret.code == 0){
+									api.toast({
+										msg: ret.msg,
+										duration: 2000
+									});
+									}
+
+							 }      
+							});
+						  },
+					  }
+				  });
+			}
+			function yan(){
+			var videoyan= new Vue({
+              el: '#videoyan',
+              data: {
+                  it: [],
+                  offset: 0,
+                  loader: '正在加载更多...'
+              },
+              mounted: function(){
+                  this.add(); //初始化
+                  loadMore(function(){videoyan.add()}); //下拉加载
+              },
+              updated: function(){
+                  echo.init({offset: 500, throttle: 0}); //图片懒加载
+              },
+              methods: {
+                  add: function(){
+                   var nextrow=$("#nextrow").val(); 
+                       api.ajax({
+							  url: api_url+'/App/App/shous.html',
+							  method: 'get',
+							   data: {
+								values: {
+										uid: localStorage.getItem('user_id'),
+										nextrow: nextrow,
+										}
+								} 
+								  },function(ret, err){
+									  if (ret) {
+										//console.log(JSON.stringify(ret))
+										
+										if (ret.code == 1) {
+										videoyan.offset += nextrow;
+										videoyan.it = videoyan.it.concat(ret.msg);
+										$("#nextrow").val(parseInt(nextrow)+10);
+											
+									}else if (ret.code == 0){
+									api.toast({
+										msg: ret.msg,
+										duration: 2000
+									});
+									}
+
+							 }      
+							});
+						  },
+					  }
+				  });
+			}
+			
+			
+			function openshou(title,img){
+			api.ajax({
+				  url: api_url+'/App/Index/shou.html',
+				  method: 'get',
+				  data:{
+					values:{
+						uid: localStorage.getItem('user_id'),
+						title: title,
+						type: '1',
+						img: img,
+					}
+				  }
+			  },function(ret,err){
+				  if (ret) {
+					 if(ret.code == 0 ){
+						api.toast({
+							msg: ret.msg,
+							duration: 1000
+						});
+					 }else if(ret.code == 1){
+						 api.toast({
+							msg: ret.msg,
+							duration: 1000
+						});
+					 }
+				}
+		  });
+	}
+  </script>
+  </html>

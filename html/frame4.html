@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://58.64.177.195/user/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>会员中心</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="../css/user/iconfont2.css">
+ <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+<link rel="stylesheet" href="../css/user/frozen.min.css">
+<link rel="stylesheet" href="../css/user/style.min.css">
+<style type="text/css">
+#footer{height:56px;}#footer i{font-size:1.6rem}#footer li.active,#footer li:active,#footer li:hover{font-size:.7rem}
+.ui-tiled li{font-size:.7rem}
+</style>
+<style>
+.open_vip{
+background-color: lightcyan;;
+}
+.ui-border li i em{
+font-size: 0.75rem;
+}
+.aboutpic li{
+margin-top: 0.6rem
+}
+.aboutpic li i img{
+width: 2.5rem;
+height: 2.5rem;
+}
+</style>
+</head>
+<body style="padding-top: 0;    padding-bottom: 0px;">
+
+<style>
+	.top_head{
+		background-color: white;
+		/* border-radius: 0px 0px 50px 50px; */
+		width: 100%;
+		height: auto;
+	}
+	.top_head1{
+		background-color: #F683A2;
+		border-radius: 0px 0px 50px 50px;
+		width: 100%;
+		height: 180px;
+	}
+	.top_head1>img{
+		margin-left: 40%;
+		margin-top: 0.625rem;
+		width: 20%;
+	}
+	.top_head1>p{
+		margin: 0 auto;
+		text-align: center;
+		color: white;
+	}
+	.top_head1>p:nth-of-type(1){
+		font-weight: bold;
+		font-size: 16px;
+	}
+	.top_head1>p:nth-of-type(2){
+		font-size: 12px;
+	}
+	.top_head2{
+		margin: 0.3125rem;
+		margin-top: 0.625rem;
+		display: flex;
+		flex-direction: row;
+		padding-bottom: 0.625rem;
+	}
+	.top_head2>div{
+		flex: 1;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	.top_head2>div>span{
+		font-size: 28px;
+		color: #F683A2;
+	}
+	.top_head2>div>p{
+		font-size: 14px;
+		color:black;
+	}
+	.top_head2>div>p:nth-of-type(2){
+		font-size: 10px;
+		color:darkgray;
+	}
+</style>
+<div class="top_head">
+	<div style="width:100%;height:20px;background:#F683A2;"></div>
+	<div class="top_head1" style="height: 160px;">
+		<img src="../css/user/src_images_logowhite.png" >
+		<p style="font-size:13px;"   id="login"><b onClick="openWin('login')">立即登录</b></p>
+		<p id="guang"><span style="color:#0180cf"></span>邀请好友可增加看片次数,最多提升3次</p>
+		<p style="margin:5px 0;font-size:12px;"><font color="white" id="vip"></font>&nbsp;</p>
+	</div>
+	<div class="top_head2">
+		<div onClick="openWin('open_vip_win')">
+			<span class="iconfont icon-huiyuan-"></span>
+			<p>购买会员</p>
+			<p>无限观看</p>
+		</div>
+		<div onClick="openApp()">
+			<span class="iconfont icon-daili"></span>
+			<p>代理招募</p>
+			<p>返利高达38%</p>
+		</div>
+
+		<div onClick="tixian()">
+			<span class="iconfont icon-tixian-copy"></span>
+			<p>联系上级</p>
+			<p>反馈投诉</p>
+		</div>
+		<div onClick="openWin('share_win')">
+			<span class="iconfont icon-tuiguang"></span>
+			<p>分享推广</p>
+			<p id="renshu">已推0人</p>
+		</div>
+	</div>
+</div>
+<section class="jilu" style="margin-bottom:8px;    padding: 2%;">
+	<li><span class="t5 l"></span>
+	<h2 class="t2 l" style="margin: 0;    line-height: 25px;">官方邮箱</h2>
+	<span id="email"> </span>
+	<span onclick="copySet()" class="r" style="float: right;color: #F683A2;"> 复制 </span>
+	</li>
+</section>
+
+<section class="jilu" style="padding:0%;">
+
+
+<a  target="msgubotj" onClick="yaoqing()">
+<li><span class="t5 l"><img src="../image/bangding.png" width="18" height="18"></span>
+<h2 class="t2 l" style="width: auto;
+    margin-left: 10px;" id="qd">绑定邀请码</h2>
+<span class="r" style="float: right;color: #F683A2;font-size:12px;padding-top:3px;"> 赠送观看次数</span>
+</li>
+ </a>
+<a onClick="jihuo()">
+<li><span class="t5 l"><img src="../image/zuan.png" width="18" height="18"></span>
+<h2 class="t2 l" style="width: auto;
+    margin-left: 10px;">卡密激活</h2>
+<span class="r" style="float: right;color: #F683A2;font-size:12px;padding-top:3px;"> </span>
+</li>
+</a>
+<a onClick="openWin('look_record')">
+<li><span class="t5 l"><img src="../image/jilu.png" width="18" height="18"></span>
+<h2 class="t2 l" style="width: auto;
+    margin-left: 10px;">播放记录</h2>
+<span class="r" style="float: right;color: #F683A2;font-size:12px;padding-top:3px;">  </span>
+</li>
+</a>
+<a  onClick="openWin('shezhi_win')">
+<li><span class="t5 l"><img src="../image/zhang.png" width="18" height="18"></span>
+<h2 class="t2 l" style="width: auto;
+    margin-left: 10px;">账号设置</h2>
+<span class="r login_yj">  </span>
+</li>
+</a>
+
+<a onClick="cleaCache()">
+<li><span class="t5 l"><img src="../image/qingli.png" width="18" height="18"></span>
+<h2 class="t2 l" style="width: auto;
+    margin-left: 10px;">清除缓存</h2>
+<span class="r" style="float: right;color: #F683A2;font-size:12px;padding-top:3px;" id="cache"></span>
+</li>
+</a>
+<a >
+<li><span class="t5 l"><img src="../image/banben.png" width="18" height="18"></span>
+<h2 class="t2 l" style="width: auto;
+    margin-left: 10px;font-size:12px;padding-top:3px;" id="vsion"></h2>
+
+</li>
+</a>
+
+<a onClick="exitLogin()">
+<li ><span class="t5 l"><img src="../image/tuichu.png" width="18" height="18"></span>
+<h2 class="t2 l" style=";margin-left: 10px;">退出登录</h2>
+<!-- <span class="r login_yj"> &gt; </span> -->
+</li>
+</a>
+</section>
+
+
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/doT.js"></script>
+<script type="text/javascript" src="../script/common.js"></script>
+<script type="text/javascript">
+		var api_url = localStorage.getItem('api_url');
+		  apiready = function () {
+		  getTime();
+
+		  email.innerHTML = localStorage.getItem('email');
+		    renshu.innerHTML = '已推'+localStorage.getItem('ren')+'人';
+			  api.addEventListener({
+				  name: 'newLoingdata'
+			  }, function(ret, err) {
+				if (ret) {
+
+				  getData();
+				  location.reload();
+				}
+			  });
+			  api.setCustomRefreshHeaderInfo({
+              bgColor : '#fff',
+          }, function() {
+              //下拉刷新被触发，自动进入加载状态，使用 api.refreshHeaderLoadDone() 手动结束加载中状态
+		 getData();
+		 getTime()
+              setTimeout(function(){
+					api.refreshHeaderLoadDone()
+        }, 300);
+          });
+			  getData();
+			  getCache()
+			  var appVersion = api.appVersion;
+			var vsion = $api.byId('vsion');
+			vsion.innerHTML = '当前版本：' + appVersion;
+		  }
+		 function getData(){
+			var user_id = localStorage.getItem('user_id');
+			var user_name = localStorage.getItem('user_name');
+			var viptime = localStorage.getItem('viptime');
+			var money1 = localStorage.getItem('money');
+			var connum = localStorage.getItem('connum');
+
+			var s1 = formatDateTime(viptime);
+			var timestamp = Date.parse(new Date())/1000;
+			var num = localStorage.getItem('num');
+			var time = $api.byId('vip');
+			if (viptime>timestamp) {
+			vip.innerHTML = ' VIP将于 '+s1+' 到期';
+			}
+			if (viptime<timestamp) {
+			//hming.innerHTML = ' 已过期';
+			vip.innerHTML = '您的VIP已经过期,请及时续费';
+	    	}
+			if (localStorage.getItem('user_id')<1){
+			vip.innerHTML = ' ';
+			guang.innerHTML = ' ';
+			login.innerHTML = '<b  onClick="openYi()">立即登录</b>'
+			}
+			if (localStorage.getItem('user_name')>1) {
+			login .innerHTML = '<span style="color:#0180cf"></span>每日看片次数：<b id="nums">0</b>/<b id="connums">0</b>   <i class="aui-iconfont aui-icon-question" onclick="chong()"></i>';
+			nums.innerHTML = num;
+			connums.innerHTML = connum;
+			}
+		 }
+		  //退出
+	   function exitLogin(){
+		  api.sendEvent({
+			name: 'newLoingdata',
+			extra: {
+			}
+		  });
+		  localStorage.setItem('user_id','');
+		  localStorage.setItem('user_name','');
+		  localStorage.setItem('viptime','');
+		  api.toast({
+			  msg: ' 已安全退出',
+			  duration: 2000
+		  });
+		  api.openWin({
+		  });
+
+		}
+		 //登录
+	  function openYi(){
+			api.openWin({
+			  name: 'login',
+			  url: 'login.html',
+		  });
+		}
+		function chong(){
+		api.alert({msg:"每天重置看片次数！"})
+		}
+		function cleaCache() {
+			api.clearCache(function() {
+				api.toast({
+					msg: '清除完成'
+				});
+				getCache();
+			});
+		}
+		////////////清楚缓存 方法  cleaCache   E   ////////////
+function tixian(){
+ if (localStorage.getItem('phone')){
+			keFu();
+			return;
+ }else{
+	api.toast({
+          msg: '没有信息'
+      });
+ }
+
+}
+		////////////计算缓存 方法  getCache   S   ////////////
+		function getCache() {
+			api.getCacheSize(function(ret) {
+				var size = ret.size / 1024 / 1024;
+				var mb = size.toFixed(2)
+				var cache = $api.byId('cache');
+				cache.innerHTML = mb + 'MB';
+
+			});
+		}
+
+
+		function yaoqing(){
+ if (localStorage.getItem('user_id')<1) {
+
+		  api.toast({
+			msg: '(ｷ｀ﾟДﾟ´)!!    你还没登陆！',
+			duration: 2000
+		});
+
+
+		   api.openWin({
+			   name: 'login',
+			   url: './login.html',
+			   delay: 2000
+		   });
+		   return;
+		 }
+			var dialogBox = api.require('dialogBox');
+				dialogBox.input({
+					keyboardType: 'default',
+					texts: {
+						title: '绑定邀请码',
+						placeholder: '输入邀请码',
+						leftBtnTitle: '取消',
+						rightBtnTitle: '确定'
+					},
+					styles: {
+							bg: '#fff',
+							corner: 10,
+							w: 300,
+							h: 130,
+							title: {
+								h: 18,
+								alignment: 'center',
+								size: 14,
+								color: '#000',
+								marginT:20,
+							},
+							input: {
+								h:25,
+								y:30,
+								marginT:15,
+								marginLeft: 10,
+								marginRight:10,
+								textSize: 14,
+								textColor: '#000'
+							},
+							dividingLine: {
+								width: 0.5,
+								color: '#696969'
+							},
+							left: {
+								bg: 'rgba(0,0,0,0)',
+								color: '#007FFF',
+								size: 12,
+								 h: 40
+							},
+							right: {
+								bg: 'rgba(0,0,0,0)',
+								color: '#007FFF',
+								size: 12,
+								 h: 40
+							}
+					}
+				}, function(ret) {
+
+				   if (ret.eventType == 'right') {
+						 var id = ret.text
+
+						if(id==''){
+
+							api.alert({
+									msg: '(ｷ｀ﾟДﾟ´)!!  请填写邀请码！',
+									duration: 5000
+								});
+
+						}else{
+						api.ajax({
+							url: api_url+'/App/Index/yaoqing.html',
+							method: 'get',
+							data: {
+								values: {
+									id:id,
+									uid:localStorage.getItem('user_id'),
+								}
+							}
+						},function(ret, err){
+							if (ret) {
+
+							 if (ret.code == 0) {
+							 var dialogBox = api.require('dialogBox');
+									dialogBox.close({
+										dialogName: 'input'
+									});
+								api.alert({
+									msg: '(#^.^#) 绑定成功！',
+									duration: 5000
+								});
+							 }else{
+									api.alert({
+									msg: ret.msg,
+									duration: 5000
+								});
+							 }
+
+							} else {
+							  api.hideProgress();
+							/*   alert('网络错误！');
+								  原弹窗提示*/
+								  api.toast({
+									  msg: '(ｷ｀ﾟДﾟ´)!!  网络错误 请检查！',
+									  duration: 5000
+								  });
+
+							  //alert( JSON.stringify( err ) );
+							  return;
+							}
+						});
+
+				   }
+
+				   }
+
+					if (ret.eventType == 'left') {
+						var dialogBox = api.require('dialogBox');
+						dialogBox.close({
+							dialogName: 'input'
+						});
+					}
+				});
+			}
+
+			function jihuo(){
+
+			var dialogBox = api.require('dialogBox');
+					dialogBox.input({
+						keyboardType: 'default',
+						texts: {
+							title: '输入激活码',
+							placeholder: '请输入激活码，区分大小写',
+							leftBtnTitle: '取消',
+							rightBtnTitle: '确定'
+						},
+						styles: {
+							bg: '#fff',
+							corner: 10,
+							w: 300,
+							h: 130,
+							title: {
+								h: 18,
+								alignment: 'center',
+								size: 14,
+								color: '#000',
+								marginT:20,
+							},
+							input: {
+								h:25,
+								y:30,
+								marginT:15,
+								marginLeft: 10,
+								marginRight:10,
+								textSize: 14,
+								textColor: '#000'
+							},
+							dividingLine: {
+								width: 0.5,
+								color: '#696969'
+							},
+							left: {
+								bg: 'rgba(0,0,0,0)',
+								color: '#007FFF',
+								size: 12,
+								 h: 40
+							},
+							right: {
+								bg: 'rgba(0,0,0,0)',
+								color: '#007FFF',
+								size: 12,
+								 h: 40
+							}
+						}
+					}, function(ret) {
+						if (ret.eventType == 'right') {
+							var id = ret.text;
+							if(id==''){
+
+							api.alert({
+								  msg: 'ε=(´ο｀*))) 调皮~   激活码还没输入',
+									duration: 5000
+								});
+
+							}else{
+								var user_id = localStorage.getItem('user_id');
+								if (user_id<1) {
+        alert('请先登录');
+        api.openWin({
+            name: 'login',
+            url: './login.html',
+        });
+        return;
+      }else {
+
+        api.ajax({
+           url: api_url+'/App/App/dianka.html',
+            method: 'get',
+            data: {
+                values: {
+                    uid: localStorage.getItem('user_id'),
+                    dianka: id,
+                }
+            }
+        },function(ret, err){
+            if (ret) {
+                if (ret.code == 0) {
+                  api.hideProgress();
+                 api.alert({
+                      title: '哎呀~',
+                      msg: ret.msg,
+                  });
+                  return;
+                }else if (ret.code == 1) {
+				 var dialogBox = api.require('dialogBox');
+									dialogBox.close({
+										dialogName: 'input'
+									});
+                  api.hideProgress();
+                  api.alert({
+                      title: '恭喜!',
+                      msg: '充值成功',
+                  });
+                  localStorage.setItem('viptime',ret.lasttime);
+                 api.sendEvent({
+					name: 'newLoingdata',
+					extra: {
+					}
+				  });
+
+                }
+
+            } else {
+              api.hideProgress();
+              api.alert({
+                  title: '糟糕~',
+                  msg: '网络似乎有点问题',
+              });
+            }
+        });
+
+      }
+							}
+						}
+						if (ret.eventType == 'left') {
+							var dialogBox = api.require('dialogBox');
+							dialogBox.close({
+								dialogName: 'input'
+							});
+						}
+					});
+				}
+
+
+			function copySet(){
+    var clipBoard = api.require('clipBoard');
+	  clipBoard.set({
+			value:localStorage.getItem('email')
+	  }, function(ret, err) {
+		  if (ret) {
+			api.toast({
+				msg: '已复制到剪切板',
+				duration: 2000
+			});
+		  } else {
+
+		  }
+	  });
+	}
+		 function openApp(){
+				if(api.systemType == 'android'){
+					api.openApp({
+						androidPkg: 'android.intent.action.VIEW',
+						mimeType: 'text/html',
+						uri: api_url+'/Agent/Login/login.html',
+					}, function(ret, err) {});
+				}else{
+					api.openApp({
+						iosUrl: api_url+'/Agent/Login/login.html',
+				   });
+				}
+			}
+
+			//重新获取到期时间
+  function getTime(){
+    api.ajax({
+        url: api_url+'/App/App/shuaxin.html',
+        method: 'get',
+        data: {
+            values: {
+                uid: localStorage.getItem('user_id'),
+            }
+        }
+    },function(ret, err){
+        if (ret) {
+              localStorage.setItem('num',ret.num);
+		      localStorage.setItem('viptime',ret.viptime);
+              localStorage.setItem('ren',ret.ren);
+        }
+    });
+  }
+
+		 function keFu(){
+      var dialogBox = api.require('dialogBox');
+      dialogBox.alert({
+          texts: {
+              content: '请联系客服：'+localStorage.getItem('phone'),
+              leftBtnTitle: '知道了',
+              rightBtnTitle: '联系客服'
+          },
+          styles: {
+              bg: '#fff',
+              w: 300,
+              title:{                //（可选项）JSON对象；弹窗标题栏样式配置，不传则不显示标题区域
+                  marginT: 20,       //（可选项）数字类型；标题栏与对话框顶端间距；默认：20
+                  icon: 'widget://image/app/molisos.png',          //（可选项）字符串类型；标题前面的图标路径，要求本地路径（widget://、fs://）；图片为正方形的，如：50*50、100*100，建议开发者传大小合适的图片以适配高分辨率手机屏幕，不传则不显示
+                  iconSize: 80,      //（可选项）数字类型；icon 图标边长大小,若 icon 不存在则此参数无效；默认：24
+                  titleSize: 14,     //（可选项）数字类型；标题字体大小；默认：14
+                  titleColor: '#000' //（可选项）字符串类型；标题字体颜色，支持#、rgb、rgba；默认：#fff
+              },
+              content: {
+                  color: '#000',
+                  size: 16
+              },
+              left:{                 //（可选项）JSON 对象；左边按钮样式配置，不传则不显示左边按钮
+                  marginB: 30,        //（可选项）数字类型；左边按钮的下边距；默认：7
+                  marginL: 30,       //（可选项）数字类型；左边按钮的左边距；默认：20
+                  w: 100,            //（可选项）数字类型；左边按钮的宽；默认：130
+                  h: 40,             //（可选项）数字类型；左边按钮的高；默认：35
+                  corner: 10,         //（可选项）数字类型；左边按钮圆角半径；默认：0.0
+                  bg: '#3d3d3d',        //（可选项）字符串类型；左边按钮的背景，支持rgb、rgba、#、img；默认：'#e0e'
+                  color: '#fff',  //（可选项）字符串类型；左边按钮标题字体颜色，支持rgb，rgba、#；默认：'#007FFF'
+                  size: 12           //（可选项）数字类型；左边按钮标题字体大小；默认：12
+              },
+              right: {               //（可选项）JSON 对象；右边按钮样式配置，不传则不显示右边按钮
+                  marginB: 30,        //（可选项）数字类型；右边按钮的下边距；默认：7
+                  marginL: 40,      //（可选项）数字类型；右边按钮左边距；默认：10
+                  w: 100,            //（可选项）数字类型；右边按钮的宽；默认：130
+                  h: 40,             //（可选项）数字类型；右边按钮的高；默认：35
+                  corner: 10,         //（可选项）数字类型；右边按钮圆角半径；默认：0.0
+                  bg: '#ff0103',        //（可选项）字符串类型；右边按钮的背景，支持rgb、rgba、#、img；默认：'#e0e'
+                  color: '#fff',  //（可选项）字符串类型；右边按钮标题字体颜色，支持rgb、rgba、#；默认：'#007FFF'
+                  size: 12           //（可选项）数字类型；右边按钮标题字体大小；默认：12
+              }
+          }
+      }, function(ret) {
+          if (ret.eventType == 'left') {
+              var dialogBox = api.require('dialogBox');
+              dialogBox.close({
+                  dialogName: 'alert'
+              });
+          }else if (ret.eventType == 'right') {
+            var clipBoard = api.require('clipBoard');
+            clipBoard.set({
+                value: localStorage.getItem('user_weichat')
+            }, function(ret, err) {
+                if (ret) {
+                  api.toast({
+                      msg: '已复制号码到剪切板',
+                      duration: 2000
+                  });
+                  var dialogBox = api.require('dialogBox');
+                  dialogBox.close({
+                      dialogName: 'alert'
+                  });
+                } else {
+
+                }
+            });
+          }
+      });
+    }
+</script>
+</html>

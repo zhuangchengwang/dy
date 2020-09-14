@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>云API</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/auislide.css" />
+	  <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+
+	  <style>
+	html,body{
+		color:#000;
+	}
+       .aui-nav-list-box ul li a {
+    color: #8B8386;
+}
+.guanggao ul li a {
+    color: #8B8386;
+}
+
+ .guanggao{
+
+
+}
+.guanggao ul{
+		display: -webkit-box;	display: -webkit-flex;	display: flex;
+	}
+
+.guanggao ul li {
+	float: left;
+    color: #000;
+    cursor: pointer;
+    line-height: 30px;
+	flex: 1;
+    text-align: center;
+    font-size: 14px;
+margin-top:5px;
+
+}
+
+.aui-nav-list-item {
+    display: none;
+}
+.slidebox{
+	height:200px;
+}
+.guanggao img {
+    border-radius: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+#notice_active{
+    float: left;
+    width: 80%;
+    height: 1.5rem;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+	font-size:14px;
+	color:black;
+}
+.notice_active_ch{
+	list-style-type: none;
+    line-height: 1.5rem;
+    overflow: hidden;
+}
+
+    </style>
+</head>
+<body>
+
+	 <div id="aui-slide" class="fx-box">
+
+				<div id="slidebox" class="aui-slide-wrap" >
+                <!--顶部横幅未加载完成时的提示-->
+                  <img id="bpic" src="../image/TV.png" style="height:100px;">
+
+                <!--顶部横幅未加载完成时的提示-->
+			    </div>
+
+				<div class="aui-slide-page-wrap"><!--分页容器--></div>
+		  </div>
+
+		  <div class="gonggao" id="gonggao">
+                <div class="list-title-l">
+                  <i class="iconfont icon-xitonggonggao" style="color:#EE4000;font-size:1rem"></i>
+                </div>
+                <div class="gonggao-r" id="notice_active">
+				<ul id="gong">
+				<li class="notice_active_ch" >
+                  <span id="gonggao" style="color: #000;font-size: 0.65rem;margin-left: 10px;">教育视频全新体验，全网会员视频任性看</span>
+
+				  </li>
+				  <li class="notice_active_ch">
+                  <span id="gonggao" style="color: #000;font-size: 0.65rem;margin-left: 10px;">教育视频全新体验，全网会员视频任性看</span>
+
+				  </li>
+				  <li class="notice_active_ch">
+                  <span id="gonggao" style="ccolor: #000;font-size: 0.65rem;margin-left: 10px;">教育视频全新体验，全网会员视频任性看</span>
+
+				  </li>
+				  </ul>
+                </div>
+              </div>
+              <section class="aui-content aui-margin-5" id="channeldetails">
+          		<div class="v-list-wrap" style="background:#fff;padding: 0px;">
+          		 <input type="hidden" value="0" id="nextrow" />
+          			<ul class="clearfix" >
+          			<div v-for="v in it">
+          			<div v-if="v.status === '1'">
+                  <li style="margin-bottom:20px;height:143px;width:49%; margin-right:2px; box-shadow: 0rem 0rem 0rem rgba(0, 0, 0, 0.1);"  @click="openPlayv(v.url,v.title,v.img,v.typey)">
+          				<div class="video-mask-box">
+          				<img :src="v.img" style="width:100%;max-height: 120px;height: 120px;min-height:120px;border-radius:5px 5px 0px 0px;">
+          				<span class="pay" style="position: absolute;top: 4px;left: 4px;display: block;width:40px;height:20px;line-height:20px;background:#F683A2;color: #fff;text-align: center;border-radius: 2px;">限免</span>
+          				<span class="pay" style="font-size:11px; position: absolute;bottom:23px;padding:0px 5px;background: rgba(0,0,0,0.65);color: #fff; overflow: hidden;text-overflow: ellipsis;white-space:nowrap;  width: 100%;">热度: {{v.count}} ℃ <span style="float:right;">  <i class="aui-iconfont aui-icon-date"></i>&nbsp;&nbsp;{{v.sc}}</span></span>
+          				</div>
+          				<div class="aui-group-three" style="font-size:15px;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;color:#000;width:100%;height:43px;">{{v.title}}</div>
+          				</li>
+          			</div>
+              <div v-else>
+            				<li style="margin-bottom:20px;height:143px;width:49%; margin-right:2px; box-shadow: 0rem 0rem 0rem rgba(0, 0, 0, 0.1);"  @click="openPlayer(v.url,v.title,v.img,v.typey)">
+            				<div class="video-mask-box">
+            				<img :src="v.img" style="width:100%;max-height: 120px;height: 120px;min-height:120px;border-radius:5px 5px 0px 0px;">
+            				<span class="pay" style="position: absolute;top: 4px;left: 4px;display: block;width:40px;height:20px;line-height:20px;background:#FF8C00;color: #fff;text-align: center;border-radius: 2px;">VIP</span>
+            				<span class="pay" style="font-size:11px; position: absolute;bottom:23px;padding:0px 5px;background: rgba(0,0,0,0.65);color: #fff; overflow: hidden;text-overflow: ellipsis;white-space:nowrap;  width: 100%;">热度: {{v.count}} ℃ <span style="float:right;">  <i class="aui-iconfont aui-icon-date"></i>&nbsp;&nbsp;{{v.sc}}</span></span>
+            				</div>
+            				<div class="aui-group-three" style="font-size:15px;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;color:#000;width:100%;height:43px;">{{v.title}}</div>
+            				</li>
+
+            			</div>
+
+				  </div>
+
+
+			</div>
+		 </section>
+
+
+
+
+
+
+
+		</div>
+
+
+
+
+
+
+
+</body>
+ <script type="text/x-dot-template" id="template">
+		{{~ it : value : index }}
+				 <div class="aui-slide-node bg-dark" tapmode onclick="openApp('{{= value. link }}')">
+					<img src="{{= value. picname }}" />
+				</div>
+		{{~}}
+	</script>
+	<script type="text/x-dot-template" id="notice1">
+		{{~ it : value : index }}
+
+				<li class="notice_active_ch" >
+                  <span class="aui-font-size-12 aui-text-index" style="color: #000;font-size: 0.65rem;margin-left: 5px;">{{= value. neirong }}</span>
+
+				  </li>
+		{{~}}
+	</script>
+	<script type="text/javascript" src="../script/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+	function timer(opj){
+		$(opj).find('ul').animate({
+			marginTop : "0rem"
+			},500,function(){
+			$(this).css({marginTop : "0rem"}).find("li:first").appendTo(this);
+		})
+	}
+	$(function(){
+		var num = $('#notice_active').find('li').length;
+		if(num > 1){
+		   var time=setInterval('timer("#notice_active")',5000);
+			$('.gg_more a').mousemove(function(){
+				clearInterval(time);
+			}).mouseout(function(){
+				time = setInterval('timer("#notice_active")',5000);
+			});
+		}
+
+		$(".news_ck").click(function(){
+			location.href = $("#notice_active .notice_active_ch").children(":input").val();
+		})
+	});
+</script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../script/vue.js"></script>
+<script type="text/javascript" src="../script/echo.js"></script>
+<script type="text/javascript" src="../script/doT.js"></script>
+<script type="text/javascript" src="../script/auislide.js"></script>
+  <script type="text/javascript" src="../script/common.js"></script>
+
+<script type="text/javascript">
+
+ var api_url = localStorage.getItem('api_url');
+	apiready = function(){
+
+		 api.parseTapmode();
+
+	rebo();
+		    lunbo();
+			notice();
+
+
+		api.addEventListener({
+				name: 'newLoingdata'
+		  }, function(ret, err) {
+			if (ret) {
+
+			  rebo();
+			  location.reload();
+			}
+		  });
+
+
+		api.setCustomRefreshHeaderInfo({
+              bgColor : '#fff',
+          }, function() {
+              //下拉刷新被触发，自动进入加载状态，使用 api.refreshHeaderLoadDone() 手动结束加载中状态
+		lunbo();
+		notice();
+              setTimeout(function(){
+					api.refreshHeaderLoadDone()
+              }, 2000);
+          });
+
+
+
+
+	}
+
+
+	 //轮播开始//
+	  function lunbo(){
+	   var bannerid = $api.byId('slidebox');
+		var template = $api.byId('template');
+			api.ajax({
+				  url: api_url+'/App/App/lunbo.html',
+				  method: 'get',
+			  },function(ret, err){
+				  if (ret) {
+					//alert(JSON.stringify(ret.slun))
+					var pagefn = doT.template(template.text);
+					bannerid.innerHTML = pagefn(ret.slun);
+
+					banNer();
+				  } else {
+				 // alert( '导航加载失败！' );
+				  api.hideProgress();
+				}
+			  });
+			}
+
+
+		 function notice(){
+	   var gong = $api.byId('gong');
+		var notice1 = $api.byId('notice1');
+			api.ajax({
+				  url: api_url+'/App/App/notice.html',
+				  method: 'get',
+			  },function(ret, err){
+				  if (ret) {
+					//alert(JSON.stringify(ret))
+					var pagefn = doT.template(notice1.text);
+					gong.innerHTML = pagefn(ret);
+
+				  }
+			  });
+			}
+
+
+	 function rebo(){
+	   var channeldetails = new Vue({
+              el: '#channeldetails',
+              data: {
+                  it: [],
+                  offset: 0,
+                  loader: '正在加载更多...'
+              },
+              mounted: function(){
+                  this.add(); //初始化
+                  loadMore(function(){channeldetails.add()}); //下拉加载
+              },
+              updated: function(){
+                  echo.init({offset: 500, throttle: 0}); //图片懒加载
+              },
+              methods: {
+                  add: function(){
+                   var nextrow=$("#nextrow").val();
+                       api.ajax({
+							  url: api_url+'/App/App/index1.html',
+							  method: 'get',
+							   data: {
+											values: {
+												nextrow: nextrow,
+												}
+										}
+								  },function(ret, err){
+									  if (ret) {
+										//console.log(JSON.stringify(ret))
+
+										if (ret.code == 1) {
+										channeldetails.offset += nextrow;
+										channeldetails.it = channeldetails.it.concat(ret.msg);
+										$("#nextrow").val(parseInt(nextrow)+10);
+
+									}else if (ret.code == 0){
+									api.toast({
+										msg: ret.msg,
+										duration: 2000
+									});
+									}
+
+							 }
+							});
+						  },
+					  }
+				  });
+			}
+
+
+
+	 function openApp(url){
+				if(api.systemType == 'android'){
+					api.openApp({
+						androidPkg: 'android.intent.action.VIEW',
+						mimeType: 'text/html',
+						uri: url
+					}, function(ret, err) {});
+				}else{
+					api.openApp({
+						iosUrl: url
+				   });
+				}
+			}
+	  	function banNer(){
+		  var slide = new auiSlide({
+			  container:document.getElementById("aui-slide"),
+			  // "width":300,
+			  "height":200,
+			  "speed":300,
+			  "pageShow":true,
+			  "autoPlay": 5000,
+			  "pageStyle":'dot',
+			  "loop":true,
+			  'dotPosition':'center',
+
+		  });
+		}
+
+</script>
+
+
+
+</html>

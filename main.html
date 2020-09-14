@@ -1,0 +1,919 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>底部导航</title>
+     <link rel="stylesheet" type="text/css" href="css/index/api.css"/>
+
+    <style>
+        .aui-searchbar { background: transparent; }
+        .aui-searchbar input::-webkit-input-placeholder { color: #666; }
+        .aui-bar-light .aui-searchbar-input { background-color: #eee; }
+        .aui-bar-tab-label{margin-top: 1.4rem;}
+        .aui-bar-tab-item{background-size:1rem 1rem;background-repeat:no-repeat;background-position:50% 26%;}
+        .aui-bar-tab-item div{color: #808080}
+
+
+		#footer{background-color:#FFFFFF}
+        #footer .footer1{background-image: url(./image/app/shouye1.png);}
+        #footer .footer2{background-image: url(./image/app/dating1.png);}
+        #footer .footer3{background-image: url(./image/app/faxian1.png);}
+        #footer .footer4{background-image: url(./image/app/tuiguang1.png);}
+        #footer .footer5{background-image: url(./image/app/wode1.png);}
+        #footer .footer1.aui-active{background-image: url(./image/app/shouye.png);}
+        #footer .footer2.aui-active{background-image: url(./image/app/dating.png);}
+        #footer .footer3.aui-active{background-image: url(./image/app/faxian.png);}
+        #footer .footer4.aui-active{background-image: url(./image/app/tuiguang.png);}
+        #footer .footer5.aui-active{background-image: url(./image/app/wode.png);}
+		#header{background:#FFFFFF;}
+
+		/*文字渐变动画*/
+        .masked{
+              text-align: center;
+              background-image: -webkit-linear-gradient(left, #ff5e3e, #c00e59 25%, #ff1679 50%, #c00e59 75%, #ff5e3e);
+              -webkit-text-fill-color: transparent;
+              -webkit-background-clip: text;
+              -webkit-background-size: 200% 100%;
+              -webkit-animation: masked-animation 5s infinite linear;
+            }
+          @-webkit-keyframes masked-animation {
+               0%{ background-position: 0 0;}
+               100% { background-position: -100% 0;}
+          }
+
+		  /*文字渐变动画*/
+        .maskedtitle{
+              text-align: center;
+              background-image: -webkit-linear-gradient(left, #ffe4b1, #ffffff 25%, #ffcb67 50%, #ffffff 75%, #ffe4b1);
+              -webkit-text-fill-color: transparent;
+              -webkit-background-clip: text;
+              -webkit-background-size: 200% 100%;
+              -webkit-animation: masked-animation 4s infinite linear;
+            }
+          @-webkit-keyframes masked-animation {
+               0%{ background-position: 0 0;}
+               100% { background-position: -100% 0;}
+          }
+
+.m-nav-head {
+	width: 100%;
+
+	/* margin-top: 44px; */
+	position: fixed;
+	overflow: hidden;
+	background-color: white;
+
+}
+
+.naviBar {
+	width: 100%;
+	display: -webkit-box;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	font-size: 0;
+	-webkit-overflow-scrolling: touch;
+}
+
+.m-nav-head .nav_right {
+	position: absolute;
+	top: 1px;
+	right: 0;
+	z-index: 2;
+	display: block;
+	height: 45px;
+	width: 50px;
+
+}
+
+.m-nav-head .nav_right font {
+	position: absolute;
+	top: 1px;
+	right: 0;
+	z-index: 2;
+	display: block;
+	height: 45px;
+	width: 50px;
+
+	background-size: 28px 28px;
+	;
+}
+
+.head-nav {
+	width: 150%;
+	height: 2.2rem;
+	background-color: #fff;
+}
+
+.head-nav li {
+	font-family: 'Microsoft Yahei';
+	font-size: 16px;
+	float: left;
+	width: 12%;
+	height: 100%;
+	text-align: center;
+	line-height: 44px;
+	color: #333;
+
+	position: relative;
+	padding-left: 0.625rem;
+}
+
+
+
+.head-nav li i {
+	color: #F683A2;
+	width: 100%;
+	height: 0px;
+	position: absolute;
+	margin-left: 10%;
+	/* margin-right: 33.3%; */
+
+	bottom: 0px;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+	.naviBar::-webkit-scrollbar {display:none}
+
+    </style>
+
+    <script type="text/javascript">
+
+     localStorage.setItem('api_url',"http://lu.okw98.cn");
+
+    </script>
+</head>
+<body>
+<div id="wrap" class="flex-wrap flex-vertical">
+
+<header class="aui-bar aui-bar-nav" id="header" >
+
+
+<div class="aui-searchbar" id="w">
+<div class="m-nav-head">
+<div class="naviBar">
+<div class="head-nav" id="topt" style="">
+    <li class="aui-tab-item aui-active" style="">最新</li>
+
+    <li class="aui-tab-item" id="mv11"></li>
+    <li class="aui-tab-item" id="mv22"></li>
+    <li class="aui-tab-item" id="mv33"></li>
+	<li class="aui-tab-item" id="mv44"></li>
+	<li class="aui-tab-item" id="mv55"></li>
+	<li class="aui-tab-item" id="mv66"></li>
+	</div>
+</div>
+</div>
+
+
+
+</div>
+
+   <div class="aui-searchbar aui-hide" id="w">
+<div class="m-nav-head">
+<div class="naviBar">
+<div class="head-nav" id="topts" style="">
+    <li class="aui-tab-item aui-active" style="">推荐</li>
+
+    <li class="aui-tab-item" id="sp11"> </li>
+    <li class="aui-tab-item" id="sp22"> </li>
+    <li class="aui-tab-item" id="sp33"> </li>
+	<li class="aui-tab-item" id="sp44"> </li>
+	<li class="aui-tab-item" id="sp55"> </li>
+	<li class="aui-tab-item" id="sp66"> </li>
+	</div>
+</div>
+</div>
+
+
+
+</div>
+
+	<div class="aui-searchbar aui-hide" id="w">
+	<div class="aui-tab" id="tab" style="width:100%;">
+    <div class="aui-tab-item aui-active" style="width:33.3%;">演员分类</div>
+    <div class="aui-tab-item" style="width:33.3%;">MV分类</div>
+    <div class="aui-tab-item" style="width:33.3%;">视频分类</div>
+
+	</div>
+
+
+	</div>
+	<div class="aui-searchbar aui-hide" id="w">
+	<div class="aui-tab" id="tab4" style="width:100%;">
+    <div class="aui-tab-item aui-active" style="width:33.3%;">收藏演员</div>
+    <div class="aui-tab-item" style="width:33.3%;">收藏MV</div>
+    <div class="aui-tab-item" style="width:33.3%;">收藏视频</div>
+
+	</div>
+
+
+	</div>
+	<div class="aui-searchbar aui-hide" id="w">&nbsp;</div>
+</header>
+
+
+
+
+
+
+    <div id="main" class="flex-con">
+
+    </div>
+
+
+
+  <footer class="aui-bar aui-bar-tab" id="footer">
+    <div  id="q" tapmode="hover" onclick="randomSwitchBtn( this );" class="aui-bar-tab-item footer1 aui-active">
+        <div class="aui-bar-tab-label" style="color:#000;">首页</div>
+    </div>
+    <div  id="q"  tapmode="hover" onclick="randomSwitchBtn( this );" class="aui-bar-tab-item footer2" >
+        <div class="aui-bar-tab-label" style="color:#000;">小视频</div>
+    </div>
+
+	<div  id="q"  tapmode="hover" onclick="randomSwitchBtn( this );" class="aui-bar-tab-item footer3" >
+        <div class="aui-bar-tab-label" style="color:#000;">女优</div>
+    </div>
+	<div  id="q"  tapmode="hover" onclick="randomSwitchBtn( this );" class="aui-bar-tab-item footer4" >
+        <div class="aui-bar-tab-label" style="color:#000;">收藏</div>
+    </div>
+    <div   id="q" tapmode="hover" onclick="randomSwitchBtn( this );" class="aui-bar-tab-item footer5">
+        <div class="aui-bar-tab-label" style="color:#000;">我的</div>
+    </div>
+</footer>
+
+
+
+</div>
+</body>
+</html>
+
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript" src="./script/aui-tab.js" ></script>
+<script type="text/javascript" src="./script/vue.js"></script>
+<script type="text/javascript" src="./script/doT.js" ></script>
+<script type="text/javascript" src="./script/common.js"></script>
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript">
+      var api_url = localStorage.getItem('api_url');
+
+    apiready = function () {
+	api.addEventListener({
+        name:'viewappear'
+    },function(ret,err){
+        api.setScreenOrientation({
+            orientation: 'auto_portrait'
+        });
+        api.setFullScreen({
+            fullScreen: false
+        });
+    });
+        $api.fixStatusBar( $api.dom('header') );
+		api.setStatusBarStyle({
+			style: 'dark',
+			color: 'rgba(0,0,0,0)'
+		});
+
+		var header = $api.dom('header'); // 获取 header 标签元素
+        headerH = $api.fixStatusBar(header);
+		//alert(headerH)
+		var footer = $api.byId('footer');
+		  footerH = $api.fixStatusBar(footer);
+		funIniGroup();
+		fnOpenwodeFrame()
+		api.ajax({
+		url: api_url+'/App/App/tanchuang',
+		method: 'get',
+		},function(ret, err){
+			if (ret) {
+			  //渲染模板
+			 // alert( JSON.stringify(ret.msg['title']) );
+			 if(ret.msg['kai'] == 1 ){
+				showMessage(ret.msg['nei'],ret.msg['title']);
+			 }
+
+
+			}
+
+		});
+
+		 api.ajax({
+			 url: api_url+'/App/App/config.html',
+			  method: 'get'
+		  },function(ret, err){
+			  if (ret) {
+				localStorage.setItem('url1',ret.url1);
+				localStorage.setItem('url2',ret.url2);
+				localStorage.setItem('url3',ret.url3);
+				localStorage.setItem('url4',ret.url4);
+				localStorage.setItem('url5',ret.url5);
+				localStorage.setItem('shikan',ret.shikan);
+				localStorage.setItem('yue',ret.yue);
+				localStorage.setItem('ji',ret.ji);
+				localStorage.setItem('nian',ret.nian);
+				localStorage.setItem('yong',ret.yong);
+				localStorage.setItem('xiazai',ret.xiazai);
+				localStorage.setItem('email',ret.email);
+				//var mv11 = $api.byId('mv11');
+				mv11.innerHTML = ret.mv1;
+				mv22.innerHTML = ret.mv2;
+				mv33.innerHTML = ret.mv3;
+				mv44.innerHTML = ret.mv4;
+				mv55.innerHTML = ret.mv5;
+				mv66.innerHTML = ret.mv6;
+				sp11.innerHTML = ret.sp1;
+				sp22.innerHTML = ret.sp2;
+				sp33.innerHTML = ret.sp3;
+				sp44.innerHTML = ret.sp4;
+				sp55.innerHTML = ret.sp5;
+				sp66.innerHTML = ret.sp6;
+			  } else {
+				api.toast({
+					msg: '请检查网络是否畅通'
+				});
+				}
+			});
+
+
+
+
+		var user_id = localStorage.getItem('user_id');
+          if (user_id>1) {
+			//单点登录定时检测
+			var ddtimer = setInterval(function(){
+				Onepersonlogin();
+
+			},1000)
+
+
+
+
+
+		  function Onepersonlogin() {
+
+            api.ajax({
+                url: api_url+'/App/App/imei.html',
+                method: 'get',
+                data: {
+                    values: {
+                        uid: localStorage.getItem('user_id')
+                    }
+                }
+            },function(ret, err){
+                if (ret) {
+				localStorage.setItem('num',ret.msg.num);
+                    if (ret.msg.imei!=api.deviceId) {
+                      localStorage.setItem('user_id','');
+                      localStorage.setItem('user_name','');
+                      localStorage.setItem('viptime','');
+                      api.sendEvent({
+                        name: 'newLoingdata',
+                        extra: {
+                        }
+                      });
+
+
+
+                      var dialogBox = api.require('dialogBox');
+                      dialogBox.alert({
+                          tapClose: true,  //描述：（可选项）是否点击遮罩层关闭该对话框  默认值：false
+                          texts: {
+                              content: '您已在其他设备登录',
+                          },
+                          styles:{
+                    bg: '#fff',            //（可选项）字符串类型；对话框整体背景配置，支持#、rgb、rgba、img；默认：#fff
+                    corner: 10,             //（可选项）数字类型；对话框背景圆角大小；默认：2
+                    w: 300,                //（可选项）数字类型；对话框的宽；默认：300
+                    title:{                //（可选项）JSON对象；弹窗标题栏样式配置，不传则不显示标题区域
+                        marginT: 20,       //（可选项）数字类型；标题栏与对话框顶端间距；默认：20
+                        icon: 'widget://image/app/dialogBoxTisi.jpg',          //（可选项）字符串类型；标题前面的图标路径，要求本地路径（widget://、fs://）；图片为正方形的，如：50*50、100*100，建议开发者传大小合适的图片以适配高分辨率手机屏幕，不传则不显示
+                        iconSize: 80,      //（可选项）数字类型；icon 图标边长大小,若 icon 不存在则此参数无效；默认：24
+                        titleSize: 14,     //（可选项）数字类型；标题字体大小；默认：14
+                        titleColor: '#000' //（可选项）字符串类型；标题字体颜色，支持#、rgb、rgba；默认：#fff
+                    },
+                    content:{              //（可选项）JSON 对象；文本内容配置，若不传则不显示该区域
+                        marginT: 20,       //（可选项）数字类型；内容文本顶端与标题栏底端的距离，如果标题栏不存在，则是到窗口顶端的距离；默认：20
+                        marginB: 40,       //（可选项）数字类型；内容文本底端与 left/right 顶端的距离，如果 left/right 都不存在，则是到对话框底端的距离；默认：20
+                        color: '#3d3d3d',     //（可选项）字符串类型；内容文本字体颜色，支持 rgb、rgba、#；默认：#eee
+                        size: 12           //（可选项）数字类型：内容文本字体大小；默认：12
+                    },
+
+                }
+                      });
+
+
+
+                      clearInterval(ddtimer); //清除定时器
+                      return;
+                    }
+
+
+
+                } else {
+
+                }
+            });
+          }
+
+
+		}
+
+		api.addEventListener({
+            name : 'keyback'
+        }, function(ret, err) {
+            api.toast({
+                msg : '再点一下退出应用',
+                duration : 2000,
+                location : 'bottom'
+            });
+            api.addEventListener({
+                name : 'keyback'
+            }, function(ret, err) {
+                api.closeWidget({
+                    silent : true
+                });
+            });
+
+        });
+
+
+
+		dao()
+		dao2()
+		dao3()
+		dao4()
+    }
+
+
+
+
+
+
+
+
+		function dao(){
+
+		var tab = new auiTab({
+			element:document.getElementById("topt"),
+			index:1,
+			repeatClick:false
+			},function(ret){
+				var index = ret.index;
+
+				if(index==index){
+					 api.openFrame({
+						name: 'index',
+						  url: './html/index'+index+'.html',
+						rect: {
+							x: 0,
+						   y: headerH+3,
+							w: 'auto',
+							marginBottom: 45
+						},
+						pageParam: {
+							name: 'test'
+						},
+						bounces: false,
+						bgColor: 'rgba(0,0,0,0)',
+						vScrollBarEnabled: true,
+						hScrollBarEnabled: true
+					});
+
+				}else{
+					api.setFrameAttr({
+						name: 'index',
+						hidden: true
+					});
+				}
+
+
+
+
+			});
+		}
+		function dao2(){
+
+		var tab = new auiTab({
+			element:document.getElementById("topts"),
+			index:1,
+			repeatClick:false
+			},function(ret){
+				var index = ret.index;
+
+				if(index==index){
+					 api.openFrame({
+						name: 'xiao',
+						  url: './html/xiao'+index+'.html',
+						rect: {
+							x: 0,
+						   y: headerH+3,
+							w: 'auto',
+							marginBottom: 45
+						},
+						pageParam: {
+							name: 'test'
+						},
+						bounces: false,
+						bgColor: 'rgba(0,0,0,0)',
+						vScrollBarEnabled: true,
+						hScrollBarEnabled: true
+					});
+
+				}else{
+					api.setFrameAttr({
+						name: 'xiao',
+						hidden: true
+					});
+				}
+			});
+		}
+		function dao3(){
+
+		var tab = new auiTab({
+			element:document.getElementById("tab"),
+			index:1,
+			repeatClick:false
+			},function(ret){
+				var index = ret.index;
+
+				if(index==index){
+					 api.openFrame({
+						name: 'fen',
+						  url: './html/fen'+index+'.html',
+						rect: {
+							x: 0,
+						   y: headerH,
+							w: 'auto',
+							marginBottom: 45
+						},
+						pageParam: {
+							name: 'test'
+						},
+						bounces: false,
+						bgColor: 'rgba(0,0,0,0)',
+						vScrollBarEnabled: true,
+						hScrollBarEnabled: true
+					});
+
+				}else{
+					api.setFrameAttr({
+						name: 'xiao',
+						hidden: true
+					});
+				}
+			});
+		}
+
+		function dao4(){
+
+		var tab = new auiTab({
+			element:document.getElementById("tab4"),
+			index:1,
+			repeatClick:false
+			},function(ret){
+				var index = ret.index;
+
+				if(index==index){
+					 api.openFrame({
+						name: 'shou',
+						  url: './html/shou'+index+'.html',
+						rect: {
+							x: 0,
+						   y: headerH+3,
+							w: 'auto',
+							marginBottom: 45
+						},
+						pageParam: {
+							name: 'test'
+						},
+						bounces: false,
+						bgColor: 'rgba(0,0,0,0)',
+						vScrollBarEnabled: true,
+						hScrollBarEnabled: true
+					});
+
+				}else{
+					api.setFrameAttr({
+						name: 'shou',
+						hidden: true
+					});
+				}
+			});
+		}
+function showMessage(content,title,url){
+        var dialogBox = api.require('dialogBox');
+        var  te  = {
+            content: content,
+            title: title,
+            leftBtnTitle: '知道了',
+
+        }
+        var st = {
+            bg: '#FFF',
+			corner: 8,            //（可选项）数字类型；对话框背景圆角大小；默认：2
+            w: 300,
+            title:{                //（可选项）JSON对象；弹窗标题栏样式配置，不传则不显示标题区域
+                marginT: 100,       //（可选项）数字类型；标题栏与对话框顶端间距；默认：20
+                // icon: 'widget://image/logo1.png',          //（可选项）字符串类型；标题前面的图标路径，要求本地路径（widget://、fs://）；图片为正方形的，如：50*50、100*100，建议开发者传大小合适的图片以适配高分辨率手机屏幕，不传则不显示
+                iconSize: 80,      //（可选项）数字类型；icon 图标边长大小,若 icon 不存在则此参数无效；默认：24
+                titleSize: 20,     //（可选项）数字类型；标题字体大小；默认：14
+                titleColor: '#000000' //（可选项）字符串类型；标题字体颜色，支持#、rgb、rgba；默认：#fff
+            },
+            content: {
+				 marginT: 110,
+				 marginB: 20,
+                color: '#000',
+                size: 16
+            },
+            left:{                 //（可选项）JSON 对象；左边按钮样式配置，不传则不显示左边按钮
+                marginB: 30,        //（可选项）数字类型；左边按钮的下边距；默认：7
+                marginL: 30,       //（可选项）数字类型；左边按钮的左边距；默认：20
+                w: 150,            //（可选项）数字类型；左边按钮的宽；默认：130
+                h: 50,             //（可选项）数字类型；左边按钮的高；默认：35
+                corner: 15,         //（可选项）数字类型；左边按钮圆角半径；默认：0.0
+                bg: '#3b1c3d',        //（可选项）字符串类型；左边按钮的背景，支持rgb、rgba、#、img；默认：'#e0e'
+                color: '#fff',  //（可选项）字符串类型；左边按钮标题字体颜色，支持rgb，rgba、#；默认：'#007FFF'
+                size: 14           //（可选项）数字类型；左边按钮标题字体大小；默认：12
+            },
+
+        }
+        // if(url!=undefined ){
+        if(false){
+            te.rightBtnTitle= '去看看';
+            st. right= {               //（可选项）JSON 对象；右边按钮样式配置，不传则不显示右边按钮
+                marginB: 30,        //（可选项）数字类型；右边按钮的下边距；默认：7
+                marginL: 40,      //（可选项）数字类型；右边按钮左边距；默认：10
+                w: 100,            //（可选项）数字类型；右边按钮的宽；默认：130
+                h: 40,             //（可选项）数字类型；右边按钮的高；默认：35
+                corner: 10,         //（可选项）数字类型；右边按钮圆角半径；默认：0.0
+                bg: '#ff0103',        //（可选项）字符串类型；右边按钮的背景，支持rgb、rgba、#、img；默认：'#e0e'
+                color: '#fff',  //（可选项）字符串类型；右边按钮标题字体颜色，支持rgb、rgba、#；默认：'#007FFF'
+                size: 12           //（可选项）数字类型；右边按钮标题字体大小；默认：12
+            };
+        }else{
+            st.left.w=240;
+        }
+        dialogBox.alert({
+            texts:te,
+            styles: st
+        }, function(ret) {
+            if (ret.eventType == 'left') {
+                var dialogBox = api.require('dialogBox');
+                dialogBox.close({
+                    dialogName: 'alert'
+                });
+            }else if (ret.eventType == 'right') {
+                //自己定的地址
+                if(url!=undefined){
+                    api.openWin({
+                        name: 'h5',
+                        url:url
+                    });
+                }
+                var dialogBox = api.require('dialogBox');
+                dialogBox.close({
+                    dialogName: 'alert'
+                });
+
+            }
+        });
+    }
+
+    function funIniGroup(){
+	var header_h = $api.offset(header).h;
+        var footer_h = $api.offset(footer).h;
+        var eHeaderLis = $api.domAll('header #w'),
+            frames = [];
+        for (var i = 0,len = eHeaderLis.length; i < len; i++) {
+                frames.push( {
+                    name: 'frame'+i,
+                    url: './html/frame'+i+'.html',
+                    bgColor : 'rgba(0,0,0,.2)',
+                    bounces:false
+                } )
+
+        }
+        api.openFrameGroup({
+            name: 'group',
+            scrollEnabled: false,
+            rect: {
+                x: 0,
+                y: $api.dom('header').offsetHeight,
+                w: api.winWidth,
+                h: api.frameHeight-header_h-footer_h+20
+            },
+            index: 0,
+            frames: frames,
+
+        }, function (ret, err) {
+
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+
+  function randomSwitchBtn( tag ) {
+        if( tag == $api.dom('#footer #q.aui-active') )return;
+        var eFootLis = $api.domAll('#footer #q'),
+            eHeaderLis = $api.domAll('header #w'),
+            index = 0;
+        for (var i = 0,len = eFootLis.length; i < len; i++) {
+            if( tag == eFootLis[i] ){
+                index = i;
+            }else{
+                $api.removeCls(eFootLis[i], 'aui-active');
+               $api.addCls(eHeaderLis[i], 'aui-hide');
+            }
+        }
+		if(index==0){
+			fnOpenwodeFrame()
+			 api.setFrameAttr({
+				  name: 'wode',
+				  hidden: true
+			  });
+		}else if(index==1){
+			xiaoFrame();
+			 api.setFrameAttr({
+				  name: 'wode',
+				  hidden: true
+			  });
+		}else if(index==2){
+			fenFrame();
+			 api.setFrameAttr({
+				  name: 'wode',
+				  hidden: true
+			  });
+		}else if(index==3){
+			shouFrame();
+			 api.setFrameAttr({
+				  name: 'wode',
+				  hidden: true
+			  });
+		}else if(index==4){
+			wodeFrame();
+		}else{
+				api.setFrameAttr({
+				  name: 'index',
+				  hidden: true
+			  });
+			  api.setFrameAttr({
+				  name: 'xiao',
+				  hidden: true
+			  });
+			  api.setFrameAttr({
+				  name: 'fen',
+				  hidden: true
+			  });
+			  api.setFrameAttr({
+				  name: 'wode',
+				  hidden: true
+			  });
+			  api.setFrameAttr({
+				  name: 'shou',
+				  hidden: true
+			  });
+
+		}
+
+        $api.addCls( eFootLis[index], 'aui-active');
+       $api.removeCls( eHeaderLis[index], 'aui-hide');
+        api.setFrameGroupIndex({
+            name: 'group',
+            index: index
+        });
+    }
+	//记录
+
+	function fnOpenwodeFrame() {
+        api.openFrame({
+            name: 'index',
+            url: './html/index1.html',
+            rect: {
+                x: 0,
+               y: headerH+3,
+                w: 'auto',
+                marginBottom: 45
+            },
+            pageParam: {
+                name: 'test'
+            },
+            bounces: false,
+            bgColor: 'rgba(0,0,0,0)',
+            vScrollBarEnabled: true,
+            hScrollBarEnabled: true
+        });
+	}
+	function xiaoFrame() {
+        api.openFrame({
+            name: 'xiao',
+            url: './html/xiao1.html',
+            rect: {
+                x: 0,
+               y: headerH+3,
+                w: 'auto',
+                marginBottom: 45
+            },
+            pageParam: {
+                name: 'test'
+            },
+            bounces: false,
+            bgColor: 'rgba(0,0,0,0)',
+            vScrollBarEnabled: true,
+            hScrollBarEnabled: true
+        });
+	}
+	function fenFrame() {
+        api.openFrame({
+            name: 'fen',
+            url: './html/fen1.html',
+            rect: {
+                x: 0,
+               y: headerH,
+                w: 'auto',
+                marginBottom: 45
+            },
+            pageParam: {
+                name: 'test'
+            },
+            bounces: false,
+            bgColor: 'rgba(0,0,0,0)',
+            vScrollBarEnabled: true,
+            hScrollBarEnabled: true
+        });
+	}
+	function shouFrame() {
+        api.openFrame({
+            name: 'shou',
+            url: './html/shou1.html',
+            rect: {
+                x: 0,
+                y: headerH,
+                w: 'auto',
+                marginBottom: 45
+            },
+            pageParam: {
+                name: 'test'
+            },
+            bounces: false,
+            bgColor: 'rgba(0,0,0,0)',
+            vScrollBarEnabled: true,
+            hScrollBarEnabled: true
+        });
+	}
+	function wodeFrame() {
+        api.openFrame({
+            name: 'wode',
+            url: './html/frame4.html',
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                marginBottom: 45
+            },
+            pageParam: {
+                name: 'test'
+            },
+            bounces: false,
+            bgColor: 'rgba(0,0,0,0)',
+            vScrollBarEnabled: true,
+            hScrollBarEnabled: true
+        });
+	}
+
+  function search(){
+      var UISearchBar = api.require('UISearchBar');
+      UISearchBar.open({
+          placeholder: '搜索视频...',
+          showRecordBtn: false,
+          styles: {
+              navBar: { bgColor: '#F683A2' },
+              searchBox: { marginL: 20, width: api.winWidth-80, height: 40 },
+              cancel: { width: 30, marginR: 10, color: '#fff', size: 14 },
+              clear: { color: '#ccc' }
+          }
+      }, function(ret, err) {
+          if (ret && ret.text) {
+
+    openWin1('so_win', { keyword: ret.text });
+
+          }
+      });
+  }
+
+
+		/*new auiLazyload({
+            errorImage: './image/error-img.jpg'
+        });*/
+</script>

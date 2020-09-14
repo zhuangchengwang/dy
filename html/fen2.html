@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>title</title>
+      <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+	  <link rel="stylesheet" type="text/css" href="../css/base.css"/>
+      <style>
+        .aui-row-padded [class*=aui-col-xs-]{padding: 0.25rem}
+        .aui-ellipsis-1{height: 1.2rem}
+        .videoarea .actor-details {
+          width:97%;
+          height: 5rem;
+          margin: 0 0.2rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .videoarea .actor-details .touxiang {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          display: flex;
+          align-items: left;
+          justify-content: center;
+        }
+        .videoarea .actor-details .touxiang img {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+        }
+        .videoarea .details {
+          color: white;
+          width: 85%;
+        }
+        .videoarea .details .introduce {
+          width: 100%;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          font-size: 14px;　
+        }
+        .videoarea .swiper{
+          width: 95%;
+          height: 9rem;
+        }
+        .videoarea .swiper-wrapper {
+          width: 100%;
+          margin: 0 auto;
+        }
+        .videoarea .swiper-slide {
+          width: 25%;
+          color: white;
+          position: relative;
+        }
+        .videoarea .swiper-slide img {
+          width: 100%;
+          height: 6rem;
+          border-radius: 5px;
+        }
+        .videoarea .swiper-slide p{
+          width: 100%;
+          height: 1.5rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          color: white;
+          line-height: 1.5rem;
+        }
+        .videoarea .swiper-slide span {
+          position: absolute;
+          right: 0.3rem;
+          bottom: 1.54rem;
+        }
+      </style>
+  </head>
+  <body style="background:#fff;">
+      
+
+      <section class="aui-content aui-margin-5" id="channellist" style="margin:0rem !important;">
+        <div class="v-list-wrap" style="background:#fff;padding: 0px;">
+			<ul class="clearfix" style="margin-top:5px;margin-left:7px;">
+			 <input type="hidden" value="0" id="nextrow" />
+				<li style="margin-bottom:5px;height:163px;margin-right:4px;"  v-for="v in it"  @click="openWin('listm_win', {title:v.title})">  
+				<div class="video-mask-box">     
+				<img :src="v.picname" style="width:97%;max-height: 140px;height: 140px;min-height:140px;">
+				</div> 
+				<div class="aui-group-three" style="font-size:15px;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;color:#000;width:97%;height:43px;">{{v.title}}</div>
+				</li>
+			</ul>
+		</div>
+      </section>
+    
+
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript" src="../script/common.js"></script>
+  <script type="text/javascript" src="../script/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="../script/vue.js"></script>
+  <script type="text/javascript" src="../script/echo.js"></script>
+  <script type="text/javascript">
+   var api_url = localStorage.getItem('api_url');
+      apiready = function(){
+         rebo();
+		
+		}
+		function rebo(){
+	   var channellist = new Vue({
+              el: '#channellist',
+              data: {
+                  it: [],
+                  offset: 0,
+                  loader: '正在加载更多...'
+              },
+              mounted: function(){
+                  this.add(); //初始化
+                  loadMore(function(){channellist.add()}); //下拉加载
+              },
+              updated: function(){
+                  echo.init({offset: 500, throttle: 0}); //图片懒加载
+              },
+              methods: {
+                  add: function(){
+                   var nextrow=$("#nextrow").val(); 
+                       api.ajax({
+							  url: api_url+'/App/App/mv.html',
+							  method: 'get',
+							   data: {
+											values: {  
+												nextrow: nextrow,
+												}
+										}
+								  },function(ret, err){
+									  if (ret) {
+										//console.log(JSON.stringify(ret))
+										
+										if (ret.code == 1) {
+										channellist.offset += nextrow;
+										channellist.it = channellist.it.concat(ret.msg);
+										$("#nextrow").val(parseInt(nextrow)+10);
+											
+									}else if (ret.code == 0){
+									api.toast({
+										msg: ret.msg,
+										duration: 2000
+									});
+									}
+
+							 }      
+							});
+						  },
+					  }
+				  });
+			}
+			
+	
+	function openshou(title,img){
+			api.ajax({
+				  url: api_url+'/App/Index/shou.html',
+				  method: 'get',
+				  data:{
+					values:{
+						uid: localStorage.getItem('user_id'),
+						title: title,
+						type: '3',
+						img: img,
+					}
+				  }
+			  },function(ret,err){
+				  if (ret) {
+					 if(ret.code == 0 ){
+						api.toast({
+							msg: ret.msg,
+							duration: 1000
+						});
+					 }else if(ret.code == 1){
+						 api.toast({
+							msg: ret.msg,
+							duration: 1000
+						});
+						
+					 }
+				}
+		  });
+	}
+  </script>
+  </html>

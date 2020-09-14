@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html style="font-size: 50px;">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/myui.css" />
+</head>
+<body style="background-image:url('../image/b.jpg');">
+
+  <div class="" style="background:#000;padding:5px;color:#F00;filter:alpha(Opacity=60);-moz-opacity:0.6;opacity: 0.6;height:100vh;width:100%">
+  
+   <div class="sp-content" >
+
+   
+
+    <div class="rule">
+    		<h3 style="color:#aaa;">
+    		
+    			=====推广小技巧=====
+    		
+    		</h3>
+    		<ul style="margin-top:10px;">
+    			<p style="color:#aaa;">尽量不要使用二维码去推广（国内的大部分支持二维码扫描的软件都封禁了涉黄的APP的传播）复制你的推广连接，配上文字“请务必复制连接在浏览器中打开，微信或者QQ等等第三方软件内置浏览器无法访问！！！”</p>
+    		
+    			
+    		</ul>
+			<h3 style="color:#aaa;">
+    		
+    			=====推广福利=====  
+    		
+    		</h3>
+			
+			<ul  style="text-align: center;margin-top:10px;">
+				<li>成功推广1人，免费增加10次看片次数</li>
+				<li>成功推广3人，免费增加20次看片次数</li>
+				<li>成功推广8人，免费增加30次看片次数</li>
+				<li>成功推广15人，免费增加40次看片次数</li>
+			</ul>
+			
+			<p>注：充值会员本来就无限观看，以上福利只是针对非会员的用户</p>
+			
+			
+			<h3 style="color:#aaa;font-size:18px;">
+    		
+    		我的邀请码：<em id="yao">34543</em>
+    		
+    		</h3>
+			<span>&nbsp;</span>
+			
+			 <div class="bigImg">
+      <div class="getVip">
+    
+        <button onclick="copySet()" style="background:#F683A2;">复制推广链接</button>
+      </div>
+	  
+	 
+    </div>
+    	</div>
+		
+		
+		
+  </div>
+  
+  
+    
+  </div>
+ 
+
+</body>
+<script type="text/javascript" src="../script/api.js" ></script>
+<script type="text/javascript">
+  var api_url = localStorage.getItem('api_url');
+  
+  apiready = function(){
+
+ var yao = $api.byId('yao');
+	
+		
+		yao.innerHTML = localStorage.getItem('share');
+		
+
+  
+  }
+
+
+//////////复制分享链接 //////////
+  function copySet(){
+    var clipBoard = api.require('clipBoard');
+	  clipBoard.set({
+			value:'成人福利视频APP，复制链接浏览器下载'+localStorage.getItem('xiazai')+'记得绑定我的邀请码：'+localStorage.getItem('share')
+	  }, function(ret, err) {
+		  if (ret) {
+			api.toast({
+				msg: '已复制到剪切板',
+				duration: 2000
+			});
+		  } else {
+
+		  }
+	  });
+	}
+
+
+//////////复制分享链接 //////////
+
+
+
+ 
+</script>
+</html>

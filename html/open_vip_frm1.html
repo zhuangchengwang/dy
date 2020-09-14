@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+    <style type="text/css">
+     html,body{
+       /* background-image: url(../image/vip_bg.jpg);background-size:100% 100%;  */
+           background: linear-gradient(to right,#fff 0,#fff 100%);
+		   font-size:17px;
+      }
+
+      .vip_gou_1 {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        padding: 15px 17px;
+       
+      }
+
+      .vip_gou_2 {
+        margin-right: .5em;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+      }
+
+
+      .vip_gou_3 {
+      width: 100%;
+      max-height: 100%;
+      vertical-align: top;
+      font-weight: bold;
+      background: linear-gradient(to right,#ff5e3e 0,#ff1679 100%);
+      -webkit-background-clip: text;
+      color: #1f87cb;
+
+      }
+
+      .vip_gou_4 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    min-width: 0;
+
+      }
+
+      .vip_gou_5 {
+      font-weight: 400;
+      font-size: 0.5rem;
+      width: auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-wrap: normal;
+      word-wrap: break-word;
+      word-break: break-all;
+      color: #c0c0c0;
+      padding-bottom: 10px;
+
+      }
+
+      .vip_gou_6 {
+    color: #808080;
+    font-size: 0.5rem;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+
+      }
+
+      .vip_gou_7 {
+      font-size: 0.8rem;
+      font-style: normal;
+      background: linear-gradient(to right,#ff5e3e 0,#ff1679 100%);
+      -webkit-background-clip: text;
+      color: #1f87cb;
+      font-weight: bold;
+
+      }
+
+      .vip_gou_8 {
+      background-image: -webkit-gradient(linear,left top,right top,from(#ff5e3e ),to(#ff1679 ));
+      background-image: -webkit-linear-gradient(left,#ff5e3e,#ff1679);
+      background-image: -moz-linear-gradient(left,#ff5e3e,#ff1679);
+      background-image: linear-gradient(to right,#ff5e3e,#ff1679);
+      background-color: #f7cc13;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 0.5rem;
+      font-weight: bold;
+      padding: 0.2rem 0.45rem;
+
+      }
+
+    </style>
+
+</head>
+<body >
+
+
+  <div class="open-vip-t">
+
+      <div class="open-vip-b-text" style="font-size:15px;color:red;">
+        常见问题
+      </div>
+		<p style="color:red;">1.如果出现已付款未变成会员的情况，请通过问题反馈，选择支付问题并提交相关截图，客服会处理</p>
+		
+		<!-- <p style="color:red;">2.如果因为非好友无法通过红包支付，请先添加好友，官方有多个支付号每次随机分配，所以可能需要多加几个好友</p> -->
+		<div  id="jiage">
+			<div id="imgurl" style="margin:10px"> 
+			 <img id="imgurl1" src="../image/30.png" onclick="openUrl1()" >
+				  <div class="vip_gou_1"  onclick="openUrl1()"> 
+					  <div class="vip_gou_4">
+						  <p class="vip_gou_6" ><em class="vip_gou_7" style="color:#F683A2;font-size:30px;" id="price1"> </em></p> 
+					 </div> 
+					   <div  class="vip_gou_8" style="background:#F683A2;font-size:18px;">立即购买</div> 
+				 </div>
+			</div>
+			<div id="imgurl"  style="margin:10px"> 
+			 <img id="imgurl1" src="../image/90.png" onclick="openUrl2()">
+				  <div class="vip_gou_1"  onclick="openUrl2()"> 
+					  <div class="vip_gou_4">
+						  <p class="vip_gou_6" ><em class="vip_gou_7" style="color:#F683A2;font-size:30px;" id="price2">  </em></p> 
+					 </div> 
+					   <div  class="vip_gou_8" style="background:#F683A2;font-size:18px;">立即购买</div> 
+				 </div>
+			</div>
+			<div id="imgurl"  style="margin:10px"> 
+			 <img id="imgurl1" src="../image/360.png" onclick="openUrl3()">
+				  <div class="vip_gou_1"  onclick="openUrl3()"> 
+					  <div class="vip_gou_4">
+						  <p class="vip_gou_6" ><em class="vip_gou_7" style="color:#F683A2;font-size:30px;" id="price3"></em></p> 
+					 </div> 
+					   <div  class="vip_gou_8" style="background:#F683A2;font-size:18px;">立即购买</div> 
+				 </div>
+			</div>
+			<div id="imgurl" style="margin:10px"> 
+			 <img id="imgurl1" src="../image/999.png" onclick="openUrl4()">
+				  <div class="vip_gou_1"  onclick="openUrl4()"> 
+					  <div class="vip_gou_4">
+						  <p class="vip_gou_6" ><em class="vip_gou_7" style="color:#F683A2;font-size:30px;" id="price4"> </em></p> 
+					 </div> 
+					   <div  class="vip_gou_8" style="background:#F683A2;font-size:18px;">立即购买</div> 
+				 </div>
+			</div>
+			<!-- <div id="imgurl"> -->
+			
+			<!-- <img id="imgurl1" src="../image/yue.png" onclick="openUrl5()"> -->
+				  <!-- <div class="vip_gou_1"  onclick="openUrl1()"> -->
+					  <!-- <div class="vip_gou_4"> -->
+						  <!-- <p class="vip_gou_6" ><em class="vip_gou_7" style="color:#F683A2;font-size:30px;">30.00元</em></p> -->
+					  <!-- </div> -->
+					  <!-- <div  class="vip_gou_8" style="background:#F683A2;font-size:18px;">立即购买</div> -->
+				  <!-- </div> -->
+
+
+			<!-- </div> -->
+			</div>
+      <div id="weichat" class="open-vip-b-kefu"></div>
+  </div>
+<br><br>  
+     <!-- <p><div class="aui-btn-tuichu aui-btn-block"  id="weichat">专属客服：---</div></p>  -->
+
+    </div>
+  </div>
+
+
+
+</body>
+<script type="text/javascript" src="../script/api.js" ></script>
+<script type="text/javascript">
+   var api_url = localStorage.getItem('api_url');
+      apiready = function() {
+		price1.innerHTML = localStorage.getItem('yue')+'元';
+		price2.innerHTML = localStorage.getItem('ji')+'元';
+		price3.innerHTML = localStorage.getItem('nian')+'元';
+		price4.innerHTML = localStorage.getItem('yong')+'元';
+		weichat.innerHTML = '专属客服：'+localStorage.getItem('phone');
+
+	  }    
+     
+   function openUrl1(){
+      if (localStorage.getItem('ustatus')==2){
+       if (localStorage.getItem('durl1')==1){
+			
+			keFu();
+			return;
+		 }else{
+		   openApp(localStorage.getItem('durl1'));
+		 }
+      }else {
+        openApp(localStorage.getItem('url1'));
+      }
+    }
+	function openUrl2(){
+      if (localStorage.getItem('ustatus')==2){
+       if (localStorage.getItem('durl2')==1){
+			
+			
+			 keFu();
+			return;
+		 }else{
+		  openApp(localStorage.getItem('durl2'));
+		 }
+      }else {
+        openApp(localStorage.getItem('url2'));
+      }
+    }
+	function openUrl3(){
+      if (localStorage.getItem('ustatus')==2){
+       if (localStorage.getItem('durl3')==1){
+			
+			 
+			  keFu();
+			return;
+		 }else{
+		 openApp(localStorage.getItem('durl3'));
+		 }
+      }else {
+        openApp(localStorage.getItem('url3'));
+      }
+    }
+	
+	function openUrl4(){
+      if (localStorage.getItem('ustatus')==2){
+       if (localStorage.getItem('durl4')==1){
+ keFu();
+			return;
+			
+		 }else{
+		  
+			openApp(localStorage.getItem('durl4'));
+		 }
+      }else {
+        openApp(localStorage.getItem('url4'));
+      }
+    }
+	function openApp(url){
+				if(api.systemType == 'android'){
+					api.openApp({
+						androidPkg: 'android.intent.action.VIEW',
+						mimeType: 'text/html',
+						uri: url
+					}, function(ret, err) {});
+				}else{
+					api.openApp({
+						iosUrl: url
+				   });
+				} 
+			}
+			
+			
+			 function keFu(){
+      var dialogBox = api.require('dialogBox');
+      dialogBox.alert({
+          texts: {
+              content: '请联系客服：'+localStorage.getItem('phone'),
+              leftBtnTitle: '知道了',
+              rightBtnTitle: '联系客服'
+          },
+          styles: {
+              bg: '#fff',
+              w: 300,
+              title:{                //（可选项）JSON对象；弹窗标题栏样式配置，不传则不显示标题区域
+                  marginT: 20,       //（可选项）数字类型；标题栏与对话框顶端间距；默认：20
+                  icon: 'widget://image/app/molisos.png',          //（可选项）字符串类型；标题前面的图标路径，要求本地路径（widget://、fs://）；图片为正方形的，如：50*50、100*100，建议开发者传大小合适的图片以适配高分辨率手机屏幕，不传则不显示
+                  iconSize: 80,      //（可选项）数字类型；icon 图标边长大小,若 icon 不存在则此参数无效；默认：24
+                  titleSize: 14,     //（可选项）数字类型；标题字体大小；默认：14
+                  titleColor: '#000' //（可选项）字符串类型；标题字体颜色，支持#、rgb、rgba；默认：#fff
+              },
+              content: {
+                  color: '#000',
+                  size: 16
+              },
+              left:{                 //（可选项）JSON 对象；左边按钮样式配置，不传则不显示左边按钮
+                  marginB: 30,        //（可选项）数字类型；左边按钮的下边距；默认：7
+                  marginL: 30,       //（可选项）数字类型；左边按钮的左边距；默认：20
+                  w: 100,            //（可选项）数字类型；左边按钮的宽；默认：130
+                  h: 40,             //（可选项）数字类型；左边按钮的高；默认：35
+                  corner: 10,         //（可选项）数字类型；左边按钮圆角半径；默认：0.0
+                  bg: '#3d3d3d',        //（可选项）字符串类型；左边按钮的背景，支持rgb、rgba、#、img；默认：'#e0e'
+                  color: '#fff',  //（可选项）字符串类型；左边按钮标题字体颜色，支持rgb，rgba、#；默认：'#007FFF'
+                  size: 12           //（可选项）数字类型；左边按钮标题字体大小；默认：12
+              },
+              right: {               //（可选项）JSON 对象；右边按钮样式配置，不传则不显示右边按钮
+                  marginB: 30,        //（可选项）数字类型；右边按钮的下边距；默认：7
+                  marginL: 40,      //（可选项）数字类型；右边按钮左边距；默认：10
+                  w: 100,            //（可选项）数字类型；右边按钮的宽；默认：130
+                  h: 40,             //（可选项）数字类型；右边按钮的高；默认：35
+                  corner: 10,         //（可选项）数字类型；右边按钮圆角半径；默认：0.0
+                  bg: '#ff0103',        //（可选项）字符串类型；右边按钮的背景，支持rgb、rgba、#、img；默认：'#e0e'
+                  color: '#fff',  //（可选项）字符串类型；右边按钮标题字体颜色，支持rgb、rgba、#；默认：'#007FFF'
+                  size: 12           //（可选项）数字类型；右边按钮标题字体大小；默认：12
+              }
+          }
+      }, function(ret) {
+          if (ret.eventType == 'left') {
+              var dialogBox = api.require('dialogBox');
+              dialogBox.close({
+                  dialogName: 'alert'
+              });
+          }else if (ret.eventType == 'right') {
+            var clipBoard = api.require('clipBoard');
+            clipBoard.set({
+                value: localStorage.getItem('user_weichat')
+            }, function(ret, err) {
+                if (ret) {
+                  api.toast({
+                      msg: '已复制号码到剪切板',
+                      duration: 2000
+                  });
+                  var dialogBox = api.require('dialogBox');
+                  dialogBox.close({
+                      dialogName: 'alert'
+                  });
+                } else {
+
+                }
+            });
+          }
+      });
+    }
+
+</script>
+</html>

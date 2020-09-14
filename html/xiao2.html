@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>云API</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/auislide.css" />
+	  <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+  
+	  <style>
+	html,body{
+		color:#000;
+	}
+       .aui-nav-list-box ul li a {
+    color: #8B8386;
+}
+.guanggao ul li a {   
+    color: #8B8386;
+}
+
+ .guanggao{
+	
+	
+}
+.guanggao ul{
+		display: -webkit-box;	display: -webkit-flex;	display: flex;
+	}
+
+.guanggao ul li {
+	float: left;
+    color: #000;
+    cursor: pointer;
+    line-height: 30px;
+	flex: 1;
+    text-align: center;
+    font-size: 14px;
+margin-top:5px;
+
+}
+
+.aui-nav-list-item {
+    display: none;
+}
+.slidebox{
+	height:200px;
+}
+.guanggao img {
+    border-radius: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 auto;
+}
+
+
+
+  
+
+
+#notice_active{
+    float: left;
+    width: 80%;
+    height: 1.5rem;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+	font-size:14px;
+	color:black;
+}
+.notice_active_ch{
+	list-style-type: none;
+    line-height: 1.5rem;
+    overflow: hidden;
+}
+
+    </style>
+</head>
+<body>
+     
+		  
+		 
+		  <section class="aui-content aui-margin-5" id="channeldetails">    
+		<div class="v-list-wrap" style="background:#fff;padding: 0px;">
+		 <input type="hidden" value="0" id="nextrow" />
+			<ul class="clearfix" >
+			<div v-for="v in it">
+			<div v-if="v.status === '1'">
+				<li style="margin-bottom:20px;height:143px;width:49%; margin-right:2px; box-shadow: 0rem 0rem 0rem rgba(0, 0, 0, 0.1);"  @click="openPlayv(v.url,v.title,v.img,v.typey)">  
+				<div class="video-mask-box">     
+				<img :src="v.img" style="width:100%;max-height: 120px;height: 120px;min-height:120px;border-radius:5px 5px 0px 0px;">
+				<span class="pay" style="position: absolute;top: 4px;left: 4px;display: block;width:40px;height:20px;line-height:20px;background:#F683A2;color: #fff;text-align: center;border-radius: 2px;">限免</span>
+				<span class="pay" style="font-size:11px; position: absolute;bottom:23px;padding:0px 5px;background: rgba(0,0,0,0.65);color: #fff; overflow: hidden;text-overflow: ellipsis;white-space:nowrap;  width: 100%;">热度: {{v.count}} ℃ <span style="float:right;">  <i class="aui-iconfont aui-icon-date"></i>&nbsp;&nbsp;{{v.sc}}</span></span>
+				</div> 
+				<div class="aui-group-three" style="font-size:15px;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;color:#000;width:100%;height:43px;">{{v.title}}</div>
+				</li>
+			  </div>
+			  <div v-else>
+				<li style="margin-bottom:20px;height:143px;width:49%; margin-right:2px; box-shadow: 0rem 0rem 0rem rgba(0, 0, 0, 0.1);"  @click="openPlayer(v.url,v.title,v.img,v.typey)">  
+				<div class="video-mask-box">     
+				<img :src="v.img" style="width:100%;max-height: 120px;height: 120px;min-height:120px;border-radius:5px 5px 0px 0px;">
+				<span class="pay" style="position: absolute;top: 4px;left: 4px;display: block;width:40px;height:20px;line-height:20px;background:#FF8C00;color: #fff;text-align: center;border-radius: 2px;">VIP</span>
+				<span class="pay" style="font-size:11px; position: absolute;bottom:23px;padding:0px 5px;background: rgba(0,0,0,0.65);color: #fff; overflow: hidden;text-overflow: ellipsis;white-space:nowrap;  width: 100%;">热度: {{v.count}} ℃ <span style="float:right;">  <i class="aui-iconfont aui-icon-date"></i>&nbsp;&nbsp;{{v.sc}}</span></span>
+				</div> 
+				<div class="aui-group-three" style="font-size:15px;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;color:#000;width:100%;height:43px;">{{v.title}}</div>
+				</li>
+			  </div>
+			</div>	
+			</ul>
+		
+			</div>
+		 </section>
+		
+		
+		
+		
+		
+		
+		
+		</div>
+	
+	
+	
+	
+	
+	
+	
+</body>
+
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../script/vue.js"></script>
+<script type="text/javascript" src="../script/echo.js"></script>
+<script type="text/javascript" src="../script/doT.js"></script>
+<script type="text/javascript" src="../script/auislide.js"></script>
+  <script type="text/javascript" src="../script/common.js"></script>
+
+<script type="text/javascript">
+	
+ var api_url = localStorage.getItem('api_url');
+	apiready = function(){
+	
+		 api.parseTapmode();
+		api.addEventListener({
+				name: 'newLoingdata'
+		  }, function(ret, err) {
+			if (ret) {
+
+			  rebo();
+			  location.reload();
+			}
+		  });
+	rebo();
+
+	}
+
+		 
+	 function rebo(){
+	   var channeldetails = new Vue({
+              el: '#channeldetails',
+              data: {
+                  it: [],
+                  offset: 0,
+                  loader: '正在加载更多...'
+              },
+              mounted: function(){
+                  this.add(); //初始化
+                  loadMore(function(){channeldetails.add()}); //下拉加载
+              },
+              updated: function(){
+                  echo.init({offset: 500, throttle: 0}); //图片懒加载
+              },
+              methods: {
+                  add: function(){
+                   var nextrow=$("#nextrow").val(); 
+                       api.ajax({
+							  url: api_url+'/App/App/xiao1.html',
+							  method: 'get',
+							   data: {
+											values: {  
+												nextrow: nextrow,
+												}
+										}
+								  },function(ret, err){
+									  if (ret) {
+										//console.log(JSON.stringify(ret))
+								
+										if (ret.code == 1) {
+										channeldetails.offset += nextrow;
+										channeldetails.it = channeldetails.it.concat(ret.msg);
+										$("#nextrow").val(parseInt(nextrow)+10);
+									
+									}else if (ret.code == 0){
+									api.toast({
+										msg: ret.msg,
+										duration: 2000
+									});
+									}
+
+							 }      
+							});
+						  },
+					  }
+				  });
+			}
+		  
+		
+		
+	 function openApp(url){
+				if(api.systemType == 'android'){
+					api.openApp({
+						androidPkg: 'android.intent.action.VIEW',
+						mimeType: 'text/html',
+						uri: url
+					}, function(ret, err) {});
+				}else{
+					api.openApp({
+						iosUrl: url
+				   });
+				} 
+			}
+	 
+		
+</script>
+
+
+
+</html>
